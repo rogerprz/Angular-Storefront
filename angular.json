@@ -4,8 +4,8 @@
   "newProjectRoot": "projects",
   "projects": {
     "fastspring-angular": {
-      "root": "",
-      "sourceRoot": "src",
+      "root": "src/client",
+      "sourceRoot": "src/client",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
