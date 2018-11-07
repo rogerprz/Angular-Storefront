@@ -6,10 +6,13 @@ import { HttpModule} from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ContactListComponent } from './contact-list/contact-list.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    // MenuComponent,
     ContactListComponent
   ],
   imports: [
