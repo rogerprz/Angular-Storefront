@@ -2,12 +2,17 @@ const express = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
+const path = require('path');
 
 require('dotenv').config();
 
-app.use(bodyParser.json())
-
 let database;
+
+app.use(bodyParser.json())
+app.use(express.static(path.join(__dirname, 'public')));
+console.log("what is DIRNAME",__dirname);
+app.use('/profiles', express.static(path.join(__dirname, 'public')));
+
 
 app.get('/api/contacts', (req, res) => {
   const contactsCollection = database.collection('contacts');
@@ -31,6 +36,11 @@ app.post('/api/contacts', (req,res) => {
 
     return res.status(201).json(newRecord)
   })
+})
+
+app.get('*',(req,res) => {
+  debugger
+  return res.sendFile(path.join(__dirname, '../client/index.html'))
 })
 
 MongoClient.connect(process.env.DB_CONN, (err, db) => {
