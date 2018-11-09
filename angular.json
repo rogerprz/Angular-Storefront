@@ -27,7 +27,9 @@
               "src/client/assets"
             ],
             "styles": [
-              "src/client/styles.sass"
+              "src/client/styles.sass",
+              "src/client/assets/semantic.min.css",
+              "src/client/assets/semantic.grid.min.css"
             ],
             "scripts": []
           },
