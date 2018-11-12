@@ -30,4 +30,5 @@ function seedCollection(collectionName, initialRecords) {
 }
 
 seedCollection('users', users);
+seedCollection("products", products);
 seedCollection('contacts', contacts);

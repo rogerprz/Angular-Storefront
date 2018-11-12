@@ -9,7 +9,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -21,7 +21,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -33,7 +33,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -45,7 +45,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -57,7 +57,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -69,7 +69,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -81,7 +81,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -93,7 +93,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -105,7 +105,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -117,7 +117,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -129,7 +129,7 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   },
   {
     "name": "Coca-Cola zero",
@@ -141,6 +141,6 @@
     "format": "digital",
     "unit_price":2.00,
     "discount_price": 0.50,
-    "productImageUrl": "/images/coke-zero-20oz.jpeg"
+    "imageUrl": "/images/coke-zero-20oz.jpeg"
   }
 ]
