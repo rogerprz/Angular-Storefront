@@ -37,12 +37,23 @@ app.post('/api/contacts', (req, res) => {
     return res.status(201).json(newRecord);
   });
 });
+
+app.get('/api/products', (req, res) => {
+
+  const productsCollection = database.collection('products');
+
+  productsCollection.find({}).toArray((err, docs) => {
+    return res.json(docs)
+  });
+
+});
+
 app.post('/api/products', (req, res) => {
   const user = req.body;
 
-  const contactsCollection = database.collection('contacts');
+  const productsCollection = database.collection('products');
 
-  contactsCollection.insertOne(user, (err, r) => {
+  productsCollection.insertOne(user, (err, r) => {
     if (err) {
       return res.status(500).json({ error: 'Error inserting new record.' })
     }
