@@ -10,6 +10,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactComponent } from './contact/contact.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AddProductComponent } from './add-product/add-product.component';
     ContactComponent,
     AddContactComponent,
     AddProductComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
