@@ -54,6 +54,7 @@ app.post('/api/products', (req, res) => {
   const productsCollection = database.collection('products');
 
   productsCollection.insertOne(user, (err, r) => {
+    debugger
     if (err) {
       return res.status(500).json({ error: 'Error inserting new record.' })
     }
