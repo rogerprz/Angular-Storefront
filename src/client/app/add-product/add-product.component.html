@@ -1,7 +1,7 @@
 
 <div class="add-form-container">
   <h2>Add Product Details</h2>
-  <form class="ui big form" #contactForm="ngForm" (submit)="onSubmit(productForm)">
+  <form class="ui big form" #contactForm="ngForm" (submit)="onSubmit(productForm)" [class.loading]="loading">
     <div class="fields">
         <div class="eight wide field">
           <label>Product Name</label>
@@ -9,54 +9,48 @@
         </div>
         <div class="eight wide field">
           <label>Quantity Available</label>
-          <input type="number" placeholder="Enter quantity available for sale" name="quantity-available" ngModel>
+          <input type="number" placeholder="Enter quantity available for sale" name="quantityAvailable" ngModel>
         </div>
     </div>
     <div class="equal width fields">
 
       <div class="field">
         <label>Minimum Quantity</label>
-        <input type="number" placeholder="Minimum quantity allowed to purchased" name="minimum-quantity" ngModel>
+        <input type="number" placeholder="Minimum quantity allowed to purchased" name="minimumQuantity" ngModel>
       </div>
       <div class="field">
         <label>Editable Quantity</label>
-        <input type="number"  placeholder="Quantity Editable" name="editable-quantity" ngModel>
+        <input type="number"  placeholder="Quantity Editable" name="editableQuantity" ngModel>
       </div>
 
-    </div>
-    <!-- <div class="field">
-      <input type="text" maxlength="1" placeholder="Format type: physical, Digital, mixed" name="prefix" ngModel>
-    </div> -->
-    <div class="">
-      <label style="font-weight: bold; margin-bottom:10px;">Format (Type: P : Physical, D: Digital, M: mixed)</label>
-      <select class="ui dropdown" style="margin-bottom:15px;">
-        <option value="">Gender</option>
-        <option value="1">Male</option>
-        <option value="0">Female</option>
+   </div>
+     <div class="field">
+       <label>Format - Type: P, D, M </label>
+       <input type="text" maxlength="1" placeholder="Format type: physical, digital, mixed" name="format" ngModel>
+     </div>
+    <!-- <div>
+      <select class="ui dropdown" style="margin-bottom:15px;" >
+        <option value="">Select Format</option>
+        <option value="physical">Physical</option>
+        <option value="digital">Digital</option>
+        <option value="mixed">Mixed</option>
       </select>
 
-    </div>
+    </div> -->
 
     <div class="equal width fields">
 
+      <div class="field">
+        <label>Unit Price</label>
+        <input type="number" maxlength="4" placeholder="Price per unit" name="unitPrice" ngModel>
+      </div>
 
       <div class="field">
-        <label>Unit Price</label>
-        <input type="number" maxlength="4" placeholder="Price per unit" name="unit-price" ngModel>
-      </div>
-      <div class="field">
-        <label>Unit Price</label>
-        <input type="number" maxlength="4" placeholder="Price per unit" name="unit-price" ngModel>
-      </div>
-      <div class="field">
         <label>Discount Price</label>
-        <input type="number" maxlength="4" placeholder="Price discounted per unit" name="discount-price" ngModel>
+        <input type="number" maxlength="4" placeholder="Price discounted per unit" name="discountPrice" ngModel>
       </div>
     </div>
-    <!-- <div class="field">
-      <label>Photo URL</label>
-      <input type="text" placeholder="http://cdn.com/profile.jpg" name="photo">
-    </div> -->
+
     <button type="submit" class="ui submit large grey button right floated">Submit</button>
   </form>
 </div>
