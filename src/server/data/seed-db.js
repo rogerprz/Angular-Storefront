@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const users = require('./users');
 const contacts = require('./contacts');
+const products = require('./products');
 
 const MongoClient = require('mongodb').MongoClient;
 const bcrypt = require('bcrypt');
@@ -31,4 +32,4 @@ function seedCollection(collectionName, initialRecords) {
 
 seedCollection('users', users);
 seedCollection("products", products);
-seedCollection('contacts', contacts);
+// seedCollection('contacts', contacts);

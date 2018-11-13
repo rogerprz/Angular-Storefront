@@ -9,37 +9,39 @@ require('dotenv').config();
 let database;
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/profiles', express.static(path.join(__dirname, 'profiles')));
+// app.use('/profiles', express.static(path.join(__dirname, 'profiles')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
 app.use(bodyParser.json());
 
-app.get('/api/contacts', (req, res) => {
+// app.get('/api/contacts', (req, res) => {
+//
+//   const contactsCollection = database.collection('contacts');
+//
+//   contactsCollection.find({}).toArray((err, docs) => {
+//     return res.json(docs)
+//   });
+//
+// });
 
-  const contactsCollection = database.collection('contacts');
-
-  contactsCollection.find({}).toArray((err, docs) => {
-    return res.json(docs)
-  });
-
-});
-
-app.post('/api/contacts', (req, res) => {
-  const user = req.body;
-
-  const contactsCollection = database.collection('contacts');
-
-  contactsCollection.insertOne(user, (err, r) => {
-    if (err) {
-      return res.status(500).json({ error: 'Error inserting new record.' })
-    }
-
-    const newRecord = r.ops[0];
-
-    return res.status(201).json(newRecord);
-  });
-});
+// app.post('/api/contacts', (req, res) => {
+//   const user = req.body;
+//
+//   const contactsCollection = database.collection('contacts');
+//
+//   contactsCollection.insertOne(user, (err, r) => {
+//     if (err) {
+//       return res.status(500).json({ error: 'Error inserting new record.' })
+//     }
+//
+//     const newRecord = r.ops[0];
+//
+//     return res.status(201).json(newRecord);
+//   });
+// });
 
 app.get('/api/products', (req, res) => {
-
+  console.log("get here products");
   const productsCollection = database.collection('products');
 
   productsCollection.find({}).toArray((err, docs) => {
@@ -50,15 +52,13 @@ app.get('/api/products', (req, res) => {
 
 app.post('/api/products', (req, res) => {
   const user = req.body;
-
+  console.log("post here");
   const productsCollection = database.collection('products');
 
   productsCollection.insertOne(user, (err, r) => {
-    debugger
     if (err) {
       return res.status(500).json({ error: 'Error inserting new record.' })
     }
-
     const newRecord = r.ops[0];
 
     return res.status(201).json(newRecord);
