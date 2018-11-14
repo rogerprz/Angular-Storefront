@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Request, RequestOptions, RequestMethod, Response } from '@angular/http';
-import { map, catch } from "rxjs/operators";
-import { throw } from "rxjs/operators";
-import { Observable } from "rxjs/Observable";
+import { map } from "rxjs/operators";
 import { environment } from '../../environments/environment';
+import {Observable} from 'rxjs/Observable';
+import { throwError } from './observable/throwError';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ApiService {
@@ -59,7 +60,7 @@ export class ApiService {
 
     console.log(error);
 
-    return Observable.throw(error);
+    return Observable.throwError(error);
   }
 
 }
