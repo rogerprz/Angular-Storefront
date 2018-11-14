@@ -14,6 +14,7 @@ import { ApiService } from './shared/api.service';
 import { AuthService } from './shared/auth.service';
 import { SessionListComponent } from './session-list/session-list.component';
 import { SessionItemComponent } from './session-item/session-item.component';
+import { CartListComponent } from './cart-list/cart-list.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SessionItemComponent } from './session-item/session-item.component';
     LoginComponent,
     SessionListComponent,
     SessionItemComponent,
+    CartListComponent,
   ],
   imports: [
     BrowserModule,

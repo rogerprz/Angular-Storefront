@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { CartListComponent } from './login/cart-list.component';
+
 
 const routes: Routes = [
   // {
@@ -17,7 +19,7 @@ const routes: Routes = [
   // },
   {
     path: '',
-    redirectTo: 'products',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -32,6 +34,10 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   }
+  {
+    path: 'cart-list',
+    component: CartListComponent
+  },
 ];
 
 @NgModule({
