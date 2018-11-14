@@ -12,6 +12,8 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { LoginComponent } from './login/login.component';
 import { ApiService } from './shared/api.service';
 import { AuthService } from './shared/auth.service';
+import { SessionListComponent } from './session-list/session-list.component';
+import { SessionItemComponent } from './session-item/session-item.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { AuthService } from './shared/auth.service';
     ProductListComponent,
     ProductComponent,
     LoginComponent,
+    SessionListComponent,
+    SessionItemComponent,
   ],
   imports: [
     BrowserModule,
