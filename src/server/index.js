@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 
 app.get('/api/products', (req, res) => {
-  console.log("get here products");
+  console.log("Products loaded successfully...");
   const productsCollection = database.collection('products');
 
   productsCollection.find({}).toArray((err, docs) => {
