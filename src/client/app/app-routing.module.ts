@@ -4,19 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import { CartListComponent } from './login/cart-list.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'contacts',
-  //   pathMatch: 'full'
-  // },
-  // {
-  //   path: 'contacts',
-  //   component: ContactListComponent
-  // },
+
   {
     path: '',
     redirectTo: 'login',
@@ -33,11 +25,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
-  {
-    path: 'cart-list',
-    component: CartListComponent
   },
+  {
+    path: 'cart',
+    component: CartComponent
+  }
 ];
 
 @NgModule({
