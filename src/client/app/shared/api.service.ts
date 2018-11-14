@@ -3,7 +3,7 @@ import { Http, Headers, Request, RequestOptions, RequestMethod, Response } from 
 import { map } from "rxjs/operators";
 import { environment } from '../../environments/environment';
 import {Observable} from 'rxjs/Observable';
-import { throwError } from './observable/throwError';
+import 'rxjs/add/observable/throw'
 import 'rxjs/add/operator/catch';
 
 @Injectable()

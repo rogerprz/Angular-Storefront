@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 
 
 app.get('/api/products', (req, res) => {
+  // return res.status(500).json({error: "Error 500..."})
   console.log("Products loaded successfully...");
   const productsCollection = database.collection('products');
 
