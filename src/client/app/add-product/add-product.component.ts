@@ -8,19 +8,18 @@ import { map } from "rxjs/operators";
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
-});
+})
 export class AddProductComponent implements OnInit {
 
-  loading: Boolean false; //component ui state
-  newProduct: Product;
+  loading: Boolean = false;
+  newproduct: product;
 
   constructor(public http: Http) { }
 
   ngOnInit() {
-
   }
-  onSubmit(form: NgForm){
 
+  onSubmit(form: NgForm) {
     this.loading = true;
 
     const formValues = Object.assign({}, form.value);
@@ -38,19 +37,19 @@ export class AddProductComponent implements OnInit {
       imageUrl:           "/images/coke-zero-20oz.jpeg"
     }
 
+
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
     const requestOptions = new RequestOptions({ headers: headers });
 
     this.http.post('/api/products', product, requestOptions)
-      .pipe(map((res: Response)=> res.json()))
-      .subscribe(data=> {
+      .map((res: Response) => res.json())
+      .subscribe(data => {
         form.reset();
         this.loading = false;
         this.newProduct = data;
       });
-    };
-  };
+  }
 
-};
+}
