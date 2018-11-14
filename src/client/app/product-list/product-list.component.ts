@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
+// import { Http, Response } from '@angular/http';
 import { Product } from '../shared/product.model'
+import { ApiService } from '../shared/api.service'
 import { map } from "rxjs/operators"
 
 @Component({
@@ -12,11 +13,11 @@ export class ProductListComponent implements OnInit {
 
   products: Product[];
 
-  constructor(public http: Http) { }
+  constructor(public api: ApiService) { }
 
   ngOnInit() {
-    this.http.get('/api/products')
-      .pipe(map((res: Response)=> res.json()))
+    this.api.get('/api/products')
+      // .pipe(map((res: Response)=> res.json()))
       .subscribe(data=> this.products = data);
   }
 
