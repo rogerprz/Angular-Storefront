@@ -17,9 +17,6 @@ import { ApiService } from './shared/api.service';
   declarations: [
     AppComponent,
     MenuComponent,
-    // ContactListComponent,
-    // ContactComponent,
-    // AddContactComponent,
     AddProductComponent,
     ProductListComponent,
     ProductComponent,

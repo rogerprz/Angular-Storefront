@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { NgForm } from '@angular/forms';
 import { Product } from '../shared/product.model';
@@ -9,7 +8,7 @@ import { map } from "rxjs/operators";
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
-})
+});
 export class AddProductComponent implements OnInit {
 
   loading: Boolean false; //component ui state
@@ -54,4 +53,4 @@ export class AddProductComponent implements OnInit {
     };
   };
 
-}
+};
