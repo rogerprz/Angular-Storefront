@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router'
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
 
-  constructor() { }
-  setToken(token: string){
-    localStorage.setItem(this.storageKey,token);
+  storageKey: string = 'login-verification'
 
+  constructor(private router: Router) { }
+
+  setToken(token: string) {
+    localStorage.setItem(this.storageKey, token);
   }
-  getToken(token:string){
+
+  getToken() {
     return localStorage.getItem(this.storageKey);
   }
 
-  isLoggedIn(){
+  isLoggedIn() {
     return this.getToken() !== null;
   }
-  logout(){
+
+  logout() {
     localStorage.removeItem(this.storageKey);
     this.router.navigate(['/login'])
   }
