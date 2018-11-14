@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { NgForm } from '@angular/forms';
 import { Product } from '../shared/contact.model';
-
+import { map } from "rxjs/operators"
 
 @Component({
   selector: 'app-add-product',
@@ -23,19 +23,35 @@ export class AddProductComponent implements OnInit {
   onSubmit(form: NgForm){
     this.loading = true;
 
-    const formValues = Object.assign({}, form.value){
-      name: `${formValues.name}`,
-      quantity_available:`${formValues.quantityAvailable}`,
-      minimum_quantity:`${formValues.minimumQuantity}`,
-      editable_quantity:`${formValues.editableQuantity}`,
-      format:`${formValues.format}`,
-      unit_price:`${formValues.unitPrice}`,
-      discount_price:`${formValues.discountPrice}`,
+    const formValues = Object.assign({}, form.value);
 
-
-
+    const product: Product = {
+      name:               formValues.name,
+      selected:           false,
+      quantity:           formValues.quantity,
+      minimum_quantity:   formValues.minimumQuantity,
+      editable_quantity:  formValues.editableQuantity,
+      removeable:         true,
+      format:             formValues.format,
+      unit_price:         formValues.unitPrice,
+      discount_price:     formValues.discountPrice,
+      imageUrl:           "/images/coke-zero-20oz.jpeg"
     }
 
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    const requestOptions = new RequestOptions({headers: headers});
+
+    this.http.get('/api/products', product, requestOptions)
+      .pipe(map((res: Response)=> res.json()))
+      .subscribe(data=> {
+        form.reset();
+        this.loading = false;
+        this.newProduct = data;
+      });
   }
+  }
+
 
 }

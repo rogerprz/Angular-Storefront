@@ -1,7 +1,7 @@
 
 <div class="add-form-container">
   <h2>Add Product Details</h2>
-  <form class="ui big form" #contactForm="ngForm" (submit)="onSubmit(productForm)" [class.loading]="loading">
+  <form class="ui big form" #productForm="ngForm" (submit)="onSubmit(productForm)" [class.loading]="loading">
     <div class="fields">
         <div class="eight wide field">
           <label>Product Name</label>
@@ -9,7 +9,7 @@
         </div>
         <div class="eight wide field">
           <label>Quantity Available</label>
-          <input type="number" placeholder="Enter quantity available for sale" name="quantityAvailable" ngModel>
+          <input type="number" placeholder="Enter quantity available for sale" name="quantity" ngModel>
         </div>
     </div>
     <div class="equal width fields">
