@@ -12,7 +12,7 @@ import { map } from "rxjs/operators";
 export class AddProductComponent implements OnInit {
 
   loading: Boolean = false;
-  newproduct: product;
+  newProduct: Product;
 
   constructor(public http: Http) { }
 
@@ -44,7 +44,7 @@ export class AddProductComponent implements OnInit {
     const requestOptions = new RequestOptions({ headers: headers });
 
     this.http.post('/api/products', product, requestOptions)
-      .map((res: Response) => res.json())
+      .pipe(map((res: Response)=> res.json()))
       .subscribe(data => {
         form.reset();
         this.loading = false;
