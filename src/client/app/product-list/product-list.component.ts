@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { Http, Response } from '@angular/http';
 import { Product } from '../shared/product.model'
 import { ApiService } from '../shared/api.service'
-// import { map } from "rxjs/operators"
 
 @Component({
   selector: 'app-product-list',
