@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { NgForm } from '@angular/forms';
-import { Product } from '../shared/contact.model';
-import { map } from "rxjs/operators"
+import { Product } from '../shared/product.model';
+import { map } from "rxjs/operators";
 
 @Component({
   selector: 'app-add-product',
@@ -15,12 +15,13 @@ export class AddProductComponent implements OnInit {
   loading: Boolean false; //component ui state
   newProduct: Product;
 
-  constructor(public http:Http) { }
+  constructor(public http: Http) { }
 
   ngOnInit() {
 
   }
   onSubmit(form: NgForm){
+
     this.loading = true;
 
     const formValues = Object.assign({}, form.value);
@@ -41,17 +42,16 @@ export class AddProductComponent implements OnInit {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const requestOptions = new RequestOptions({headers: headers});
+    const requestOptions = new RequestOptions({ headers: headers });
 
-    this.http.get('/api/products', product, requestOptions)
+    this.http.post('/api/products', product, requestOptions)
       .pipe(map((res: Response)=> res.json()))
       .subscribe(data=> {
         form.reset();
         this.loading = false;
         this.newProduct = data;
       });
-  }
-  }
-
+    };
+  };
 
 }

@@ -10,9 +10,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { LoginComponent } from './login/login.component';
-// import { ContactComponent } from './contact/contact.component';
-// import { ContactListComponent } from './contact-list/contact-list.component';
-// import { AddContactComponent } from './add-contact/add-contact.component';
+import { ApiService } from './shared/api.service';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

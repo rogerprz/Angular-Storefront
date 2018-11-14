@@ -1,6 +1,18 @@
 
 <div class="add-form-container">
+  <div class="ui icon message" *ngIf="newProduct">
+    <i class="notched check green icon"></i>
+    <i class="close icon" (click)="newProduct = null"></i>
+    <div class="content">
+      <div class="header">
+        New product added!
+      </div>
+      <p>Name: {{newProduct.name}}</p>
+    </div>
+  </div>
+
   <h2>Add Product Details</h2>
+
   <form class="ui big form" #productForm="ngForm" (submit)="onSubmit(productForm)" [class.loading]="loading">
     <div class="fields">
         <div class="eight wide field">
@@ -26,7 +38,7 @@
    </div>
      <div class="field">
        <label>Format - Type: P, D, M </label>
-       <input type="text" maxlength="1" placeholder="Format type: physical, digital, mixed" name="format" ngModel>
+       <input type="text" placeholder="Format type: physical, digital, mixed" name="format" ngModel>
      </div>
     <!-- <div>
       <select class="ui dropdown" style="margin-bottom:15px;" >
@@ -42,12 +54,12 @@
 
       <div class="field">
         <label>Unit Price</label>
-        <input type="number" maxlength="4" placeholder="Price per unit" name="unitPrice" ngModel>
+        <input type="number" maxlength="4" step=".25" placeholder="Price per unit" name="unitPrice" ngModel>
       </div>
 
       <div class="field">
         <label>Discount Price</label>
-        <input type="number" maxlength="4" placeholder="Price discounted per unit" name="discountPrice" ngModel>
+        <input type="number" maxlength="4" step=".25" placeholder="Price discounted per unit" name="discountPrice" ngModel>
       </div>
     </div>
 
