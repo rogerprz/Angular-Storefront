@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
+// import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { NgForm } from '@angular/forms';
 import { Product } from '../shared/product.model';
-import { map } from "rxjs/operators";
+import { ApiService } from '../shared/api.service'
+// import { map } from "rxjs/operators";
 
 @Component({
   selector: 'app-add-product',
@@ -14,7 +15,7 @@ export class AddProductComponent implements OnInit {
   loading: Boolean = false;
   newProduct: Product;
 
-  constructor(public http: Http) { }
+  constructor(public api: ApiService) { }
 
   ngOnInit() {
   }
@@ -41,10 +42,10 @@ export class AddProductComponent implements OnInit {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const requestOptions = new RequestOptions({ headers: headers });
+    // const requestOptions = new RequestOptions({ headers: headers });
 
-    this.http.post('/api/products', product, requestOptions)
-      .pipe(map((res: Response)=> res.json()))
+    this.api.post('products', product ) //,requestOptions
+      // .pipe(map((res: Response)=> res.json()))
       .subscribe(data => {
         form.reset();
         this.loading = false;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { Http, Response } from '@angular/http';
 import { Product } from '../shared/product.model'
 import { ApiService } from '../shared/api.service'
-import { map } from "rxjs/operators"
+// import { map } from "rxjs/operators"
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
   constructor(public api: ApiService) { }
 
   ngOnInit() {
-    this.api.get('/api/products')
+    this.api.get('products')
       // .pipe(map((res: Response)=> res.json()))
       .subscribe(data=> this.products = data);
   }

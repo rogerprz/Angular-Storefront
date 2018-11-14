@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Request, RequestOptions, RequestMethod, Response } from '@angular/http';
-import { map } from "rxjs/operators";
+import { map, catch } from "rxjs/operators";
+import { throw } from "rxjs/operators";
+import { Observable } from "rxjs/Observable";
 import { environment } from '../../environments/environment';
 
 @Injectable()
@@ -43,7 +45,21 @@ export class ApiService {
     const request = new Request(requestOptions);
 
     return this.http.request(request)
-      .pipe(map((res: Response) => res.json()));
+      .pipe(map((res: Response) => res.json()))
+      .catch((res: Response) => this.onRequestError(res));
+  }
+  onRequestError(res: Response){
+    const statusCode = res.status;
+    const body = res.json();
+
+    const error = {
+      statusCode: statusCode,
+      error: body.error
+    };
+
+    console.log(error);
+
+    return Observable.throw(error);
   }
 
 }
