@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { Product } from '../shared/product.model'
+import { CartProduct } from '../shared/cart-product.model'
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../shared/api.service'
 
@@ -16,14 +17,14 @@ export class ProductComponent implements OnInit {
   @HostBinding('class') columnClass=" four wide column"
 
   loading: Boolean = false;
-  newCartProduct: CartProduct;
+  // newCartProduct: CartProduct;
 
   constructor(public api: ApiService) { }
 
   ngOnInit() {
   }
   addToCart(){
-    const id = "5beccbc086d99e12a4d2daef"
+    const id = "5bed046ee713153f20cfd8cb"
     this.loading = true;
 
     const addToCart: CartProduct = this.product
@@ -31,12 +32,12 @@ export class ProductComponent implements OnInit {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    this.api.post(`users/${id}`, addToCart ) //,requestOptions
+    this.api.post(`users/id=${id}/cart`, addToCart ) //,requestOptions
       // .pipe(map((res: Response)=> res.json()))
       .subscribe(data => {
-        form.reset();
+        // form.reset();
         this.loading = false;
-        this.newProduct = data;
+        this.addToCart = data;
       });
 
   }
