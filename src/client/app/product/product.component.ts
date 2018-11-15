@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { Product } from '../shared/product.model'
+import { NgForm } from '@angular/forms';
+import { ApiService } from '../shared/api.service'
+
 
 @Component({
   selector: 'app-product',
@@ -14,6 +17,11 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  addToCart(values){
+    debugger
+    this.clickMe = "testing bbb";
+    this.product = product
   }
 
 }

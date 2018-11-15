@@ -4,7 +4,7 @@ export interface Product {
   quantity: number;
   minimum_quantity: number;
   editable_quantity: number;
-  removeable: boolean;
+  removable: boolean;
   format: string;
   unit_price: number;
   discount_price: number;

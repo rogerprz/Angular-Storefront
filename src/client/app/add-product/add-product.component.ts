@@ -31,7 +31,7 @@ export class AddProductComponent implements OnInit {
       quantity:           formValues.quantity,
       minimum_quantity:   formValues.minimumQuantity,
       editable_quantity:  formValues.editableQuantity,
-      removeable:         true,
+      removable:          true,
       format:             formValues.format,
       unit_price:         formValues.unitPrice,
       discount_price:     formValues.discountPrice,

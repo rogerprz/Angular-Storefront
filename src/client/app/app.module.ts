@@ -12,8 +12,6 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { LoginComponent } from './login/login.component';
 import { ApiService } from './shared/api.service';
 import { AuthService } from './shared/auth.service';
-import { SessionListComponent } from './session-list/session-list.component';
-import { SessionItemComponent } from './session-item/session-item.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 
@@ -26,10 +24,8 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     ProductListComponent,
     ProductComponent,
     LoginComponent,
-    SessionListComponent,
-    SessionItemComponent,
-    CartComponent,
-    CartItemComponent,
+    CartListComponent,
+    CartProductComponent,
   ],
   imports: [
     BrowserModule,
