@@ -16,6 +16,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'products',
     component: ProductListComponent,
     canActivate: [AuthGuard]
@@ -26,14 +30,14 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
     path: 'cart',
     component: CartListComponent,
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
+  },
 ];
 
 @NgModule({

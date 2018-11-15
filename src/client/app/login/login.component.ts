@@ -16,6 +16,9 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    if (this.auth.isLoggedIn()){
+      this.router.navigate(['/products'])
+    }
   }
   onSubmit(form: NgForm) {
     const values = form.value;

@@ -277,6 +277,9 @@ MIT
 @angular/router
 MIT
 
+@angular/forms
+MIT
+
 @angular/http
 MIT
 
@@ -485,9 +488,6 @@ Apache-2.0
  limitations under the License.
  
 
-
-@angular/forms
-MIT
 
 zone.js
 MIT
