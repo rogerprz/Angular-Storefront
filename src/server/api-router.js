@@ -1,8 +1,21 @@
 const express = require('express');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt')
+const checkJwt = require("express-jwt")
 
 
 function apiRouter(database) {
   const router = express.Router();
+
+  router.use(
+        checkJwt({ secret: process.env.JWT_SECRET }).unless({ path: '/api/authenticate'})
+    );
+
+    router.use((err, req, res, next) => {
+      if (err.name === 'UnauthorizedError') {
+        res.status(401).send({ error: err.message });
+      };
+    });
 
   router.get('/products', (req, res) => {
     console.log("Products loaded successfully...");
@@ -90,6 +103,32 @@ function apiRouter(database) {
     });
   });
 
+  router.post('/authenticate', (req, res)=>{
+    const user = req.body;
+
+    const usersCollection = database.collection('users');
+
+    usersCollection
+      .findOne({ username: user.username }, (err, result)=>{
+        if (!result){
+          return res.status(404).json({ error: 'user not found'})
+        }
+        if (!bcrypt.compareSync(user.password, result.password)){
+          return res.status(401).json({ error: 'incorrect password'})
+        }
+
+        const payload = {
+          username: result.username,
+          admin: result.admin
+        }
+        const  token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '9h'});
+
+        return res.json({
+          message: 'sucess',
+          token: token
+        });
+      });
+  })
 
 
   return router
