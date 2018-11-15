@@ -2,6 +2,7 @@
   {"username":{
     "name": "newAdmin",
     "password": "newAdmin",
+    "vendor": true,
     "cart": [{
       "name": "Coca-Cola zero",
       "selected": false,
@@ -32,6 +33,7 @@
   { "username": {
     "name": "admin",
     "password": "admin",
+    "vendor": true,
     "cart": [{
       "name": "Coca-Cola Zero Admin",
       "selected": false,
@@ -62,6 +64,7 @@
   { "username": {
     "name": "fastspring",
     "password": "fastspring",
+    "vendor": false,
     "cart": [{
       "name": "Coca-Cola zero",
       "selected": false,

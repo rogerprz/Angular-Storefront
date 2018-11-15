@@ -12,8 +12,8 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { LoginComponent } from './login/login.component';
 import { ApiService } from './shared/api.service';
 import { AuthService } from './shared/auth.service';
-import { CartComponent } from './cart/cart.component';
-import { CartItemComponent } from './cart-item/cart-item.component';
+import { CartListComponent } from './cart-list/cart-list.component';
+import { CartProductComponent } from './cart-product/cart-product.component';
 
 
 @NgModule({
