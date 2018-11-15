@@ -17,15 +17,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSubmit(form:NgForm){
+  onSubmit(form: NgForm) {
     const values = form.value;
 
-    const userData = {
+    const payload = {
       username: values.username,
       password: values.password
     }
 
-    this.api.post('authenticate', userData)
+    this.api.post('authenticate', payload)
     .subscribe(data => {
       this.auth.setToken(data.token);
       this.router.navigate(['/products']);

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Request, RequestOptions, RequestMethod, Response } from '@angular/http';
 import { map } from "rxjs/operators";
 import { environment } from '../../environments/environment';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw'
 import 'rxjs/add/operator/catch';
 import { AuthService } from './auth.service';
@@ -33,7 +33,7 @@ export class ApiService {
   request(url: string, method: RequestMethod, body?: Object) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', '')
+    headers.append('Authorization', `Bearer ${this.auth.getToken()}`);
 
     const requestOptions = new RequestOptions({
       url: `${this.baseUrl}/${url}`,

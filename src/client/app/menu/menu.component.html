@@ -8,25 +8,30 @@
     </div>
 
   </div>
-  <div class="item">
-    <button [routerLink]="['/products']" class="ui basic button">
+  <div class="item" *ngIf="auth.isLoggedIn()">
+    <button [routerLink]="['/products']" class="ui basic button" >
       <i class="product hunt icon" aria-hidden="true"></i>
       Products
   </button>
   </div>
-  <div class="item">
+  <div class="item" *ngIf="auth.isLoggedIn()">
     <button [routerLink]="['/add-product']" class="ui basic button">
       <i class="add sign-in icon" aria-hidden="true"></i>
       Add Product
   </button>
   </div>
-  <div class="item">
+  <div class="item" *ngIf="!auth.isLoggedIn()">
     <button [routerLink]="['/login']" class="ui basic button">
       <i class="user icon" aria-hidden="true"></i>
       Login | Sign-Up
     </button>
   </div>
-  <div class="item">
+  <div class="right menu" *ngIf="auth.isLoggedIn()">
+    <button class="ui primary button logout" (click)="logout()">
+      Logout
+    </button>
+  </div>
+  <div class="item" *ngIf="auth.isLoggedIn()">
     <button [routerLink]="['/cart']" class="ui basic button">
       <i class="icon cart" aria-hidden="true"></i>
 

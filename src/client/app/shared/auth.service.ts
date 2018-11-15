@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 @Injectable()
 export class AuthService {
 
-  storageKey: string = 'login-verification'
+  storageKey: string = 'session-token'
 
   constructor(private router: Router) { }
 
