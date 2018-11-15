@@ -14,6 +14,7 @@ import { ApiService } from './shared/api.service';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { CartProductComponent } from './cart-product/cart-product.component';
 import { AuthService } from './shared/auth.service';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { AuthService } from './shared/auth.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ApiService, AuthService],
+  providers: [ApiService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
