@@ -31,8 +31,8 @@ export class ProductComponent implements OnInit {
 
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-
-    this.api.post(`users/id=${id}/cart`, addToCart ) //,requestOptions
+    debugger
+    this.api.post(`users/${id}`, addToCart ) //,requestOptions
       // .pipe(map((res: Response)=> res.json()))
       .subscribe(data => {
         // form.reset();

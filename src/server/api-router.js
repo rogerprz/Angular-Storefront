@@ -53,6 +53,17 @@ function apiRouter(database) {
       return res.status(201).json(newRecord);
     });
   });
+  // users with :id
+  router.get('/users/:id', (req, res) => {
+    console.log("User ID...");
+
+    const usersCollection = database.collection('users/:id');
+
+    usersCollection.findById(req.params.id).toArray((err, docs) => {
+      return res.json(docs)
+    });
+
+  });
   // start of users
   router.get('/users', (req, res) => {
     console.log("Products loaded successfully...");
@@ -78,31 +89,8 @@ function apiRouter(database) {
       return res.status(201).json(newRecord);
     });
   });
-// update user cart
-    router.get('/users/5beccbc086d99e12a4d2daef', (req, res) => {
-      console.log("Updated user product loaded successfully...");
-      const usersCollection = database.collection('users');
 
-      usersCollection.find({}).toArray((err, docs) => {
-        return res.json(docs)
-      });
 
-    });
-
-    router.post('/users/5beccbc086d99e12a4d2daef', (req, res) => {
-      const user = req.body;
-      console.log("Users route");
-      const usersCollection = database.collection('users');
-
-      usersCollection.insertOne(user, (err, r) => {
-        if (err) {
-          return res.status(500).json({ error: 'Error inserting new record.' })
-        }
-        const newRecord = r.ops[0];
-
-        return res.status(201).json(newRecord);
-      });
-    });
 
   return router
 }
