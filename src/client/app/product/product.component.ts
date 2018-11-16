@@ -30,9 +30,7 @@ export class ProductComponent implements OnInit {
 
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    debugger
     this.api.post(`users/${localStorage.id}`, addToCart ) //,requestOptions
-      // .pipe(map((res: Response)=> res.json()))
       .subscribe(data => {
         this.loading = false;
         this.addToCart = data;

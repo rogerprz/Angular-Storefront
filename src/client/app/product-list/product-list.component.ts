@@ -15,7 +15,6 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.api.get('products')
-      // .pipe(map((res: Response)=> res.json()))
       .subscribe(data=> this.products = data);
   }
 

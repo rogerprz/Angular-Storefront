@@ -1,3 +1,29 @@
-<p>
-  cart-product works!
-</p>
+<!-- <div>{{cartProduct.username}}</div> -->
+<div class="ui card">
+  <div class="image">
+    <img [src]="cartProduct?.imageUrl">
+  </div>
+  <div class="content">
+    <a class="header">{{cartProduct.name}}</a>
+    <div class="description">
+      <div>Type: {{cartProduct.format}}</div>
+      <div>Price:
+        <i class="icon dollar sign"></i>
+        {{cartProduct.unit_price}}
+      </div>
+      <div>
+        Current discount:
+        <i class="icon dollar sign"></i>
+        {{cartProduct.discount_price}}
+      </div>
+    </div>
+
+  </div>
+  <div class="extra content">
+    <button data-value="{{cartProduct}}" class="ui basic button center floated" (click)="addToCart()">
+      <span>Add &#160;</span>
+      <i class="icon cart"></i>
+
+    </button>
+  </div>
+</div>
