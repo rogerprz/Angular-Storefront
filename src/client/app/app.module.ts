@@ -18,6 +18,7 @@ import { AuthGuard } from './auth.guard';
 import { AddCouponComponent } from './add-coupon/add-coupon.component';
 import { CouponListComponent } from './coupon-list/coupon-list.component';
 import { CouponComponent } from './coupon/coupon.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { CouponComponent } from './coupon/coupon.component';
     AddCouponComponent,
     CouponListComponent,
     CouponComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
