@@ -81,6 +81,20 @@ function apiRouter(database) {
     .catch(err => console.log(err));
 
   });
+  router.post('/users/:id', (req, res) => {
+    const user = req.body;
+    console.log("Users route");
+    const usersCollection = database.collection('users');
+
+    usersCollection.insertOne(user, (err, r) => {
+      if (err) {
+        return res.status(500).json({ error: 'Error inserting new record.' })
+      }
+      const newRecord = r.ops[0];
+
+      return res.status(201).json(newRecord);
+    });
+  });
 
 
   router.post('/users', (req, res) => {

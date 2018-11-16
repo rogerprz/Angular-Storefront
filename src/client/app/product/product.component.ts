@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   @HostBinding('class') columnClass=" four wide column"
 
   loading: Boolean = false;
-  // newCartProduct: CartProduct;
+  addedToCart: CartProduct;
 
   constructor(public api: ApiService) { }
 
@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
     this.api.post(`users/${localStorage.id}`, addToCart ) //,requestOptions
       .subscribe(data => {
         this.loading = false;
-        this.addToCart = data;
+        this.addedToCart = data;
       });
 
   }
