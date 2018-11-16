@@ -24,7 +24,6 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
   addToCart(){
-    const id = "5bed046ee713153f20cfd8cb"
     this.loading = true;
 
     const addToCart: CartProduct = this.product
@@ -32,10 +31,9 @@ export class ProductComponent implements OnInit {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     debugger
-    this.api.post(`users/${id}`, addToCart ) //,requestOptions
+    this.api.post(`users/${localStorage.id}`, addToCart ) //,requestOptions
       // .pipe(map((res: Response)=> res.json()))
       .subscribe(data => {
-        // form.reset();
         this.loading = false;
         this.addToCart = data;
       });
