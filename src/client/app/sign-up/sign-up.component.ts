@@ -22,7 +22,6 @@ export class SignUpComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     console.log("form", form)
-    this.loading = true;
 
 
     const formValues = Object.assign({}, form.value);
@@ -44,9 +43,11 @@ export class SignUpComponent implements OnInit {
 
       this.api.post('users', user ) //,requestOptions
         .subscribe(data => {
-            form.reset();
-            this.loading = false;
-            this.newUser = data;
+          console.log("dataaa",data)
+          this.auth.setToken(data.token);
+          this.auth.setID(data.id);
+          this.auth.setVendor(data.vendor);
+          this.router.navigate(['/products']);
           });
 
     }

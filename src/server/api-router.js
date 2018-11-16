@@ -6,24 +6,35 @@ const mongoDB = require('mongodb')
 
 function apiRouter(database) {
   const router = express.Router();
-
-
   router.post('/users', (req, res) => {
     const user = req.body;
-    console.log("Users route");
+    if (user.password) {
+      user.password = bcrypt.hashSync(user.password, 10);
+    }
     const usersCollection = database.collection('users');
 
-    usersCollection.insertOne(user, (err, r) => {
-      if (err) {
-        return res.status(500).json({ error: 'Error inserting new record.' })
-      }
-      console.log("ropps", r.ops);
-      const newUser = r.ops[0];
+    usersCollection.insertOne(user, (err, result) => {
 
-      return res.status(201).json(newUser);
+      result = result.ops[0]
+      if (!result) {
+        return res.status(404).json({ error: 'Unable to Create user'})
+      }
+
+      const payload = {
+        username: result.username,
+        password: result.password
+      }
+      const  token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '9h'});
+      console.log("tokennn", token);
+      return res.json({
+        message: 'sucessfully logged in!!!',
+        id: result._id,
+        vendor: result.vendor,
+        token: token
+      });
     });
   });
-
+// verify users with JWT
   router.use(
       checkJwt({ secret: process.env.JWT_SECRET }).unless({ path: '/api/authenticate'})
   );
@@ -33,7 +44,6 @@ function apiRouter(database) {
       res.status(401).send({ error: err.message });
     }
   });
-
   router.get('/products', (req, res) => {
     console.log("Products loaded successfully...");
     const productsCollection = database.collection('products');
@@ -43,7 +53,6 @@ function apiRouter(database) {
     });
 
   });
-
   router.post('/products', (req, res) => {
     const user = req.body;
     console.log("post here");
@@ -68,7 +77,6 @@ function apiRouter(database) {
     });
 
   });
-
   router.post('/cart', (req, res) => {
     const user = req.body;
     console.log("Add to cart session");
