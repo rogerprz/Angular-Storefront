@@ -10,19 +10,14 @@
     <label>Password</label>
     <input type="password" name="password" placeholder="Password" ngModel>
   </div>
-  <div class="ui checkbox">
-  <input type="checkbox" name="vendor">
-  <label> Vendor Login</label>
-</div>
-<div
-    class="field ui checkbox"
-    ng-show="vendor">
-  <label> Vendor Login</label>
-  <input
-      type="checkbox"
-      ng-model="vendor"
-      name="vendor" ngModel>
-</div>
-  <button type="submit" class="ui primary button float right floated">Login/Sign-Up</button>
+  <!-- <div class="ui checkbox">
+    <input type="checkbox" name="vendor">
+    <label> Vendor Login</label>
+  </div> -->
+  <div class="field">
+    <label>Enter Vendor Code</label>
+    <input type="password" name="vendorCode" placeholder="Enter Vendor Code..." ngModel>
+  </div>
+  <button type="submit" class="ui primary button float right floated">Sign-Up</button>
   </form>
 </div>

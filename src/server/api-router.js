@@ -7,6 +7,23 @@ const mongoDB = require('mongodb')
 function apiRouter(database) {
   const router = express.Router();
 
+
+  router.post('/users', (req, res) => {
+    const user = req.body;
+    console.log("Users route");
+    const usersCollection = database.collection('users');
+
+    usersCollection.insertOne(user, (err, r) => {
+      if (err) {
+        return res.status(500).json({ error: 'Error inserting new record.' })
+      }
+      console.log("ropps", r.ops);
+      const newUser = r.ops[0];
+
+      return res.status(201).json(newUser);
+    });
+  });
+
   router.use(
       checkJwt({ secret: process.env.JWT_SECRET }).unless({ path: '/api/authenticate'})
   );
@@ -106,21 +123,6 @@ function apiRouter(database) {
     });
   });
 
-
-  router.post('/users', (req, res) => {
-    const user = req.body;
-    console.log("Users route");
-    const usersCollection = database.collection('users');
-
-    usersCollection.insertOne(user, (err, r) => {
-      if (err) {
-        return res.status(500).json({ error: 'Error inserting new record.' })
-      }
-      const newRecord = r.ops[0];
-
-      return res.status(201).json(newRecord);
-    });
-  });
 
   router.post('/authenticate', (req, res) => {
     const user = req.body;
