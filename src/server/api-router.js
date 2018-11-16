@@ -69,11 +69,19 @@ function apiRouter(database) {
   router.get('/users/:id', (req, res) => {
     console.log("User ID...");
 
-    const usersCollection = database.collection('users/:id');
-
-    usersCollection.findById(req.params.id).toArray((err, docs) => {
-      return res.json(docs)
-    });
+    const usersCollection = database.collection('users');
+    console.log(req.params)
+    usersCollection.findOne({
+      _id: `${id}`
+    })
+    .then(userFound => {
+      if (!userFound){
+        return res.status(404).end();
+      }
+      console.log(json(userFound));
+      return res.status(200).json(userFound)
+    })
+    .catch(err => next(err));
 
   });
   // start of users
@@ -118,12 +126,14 @@ function apiRouter(database) {
 
         const payload = {
           username: result.username,
-          admin: result.admin
+          admin: result.vendor
         }
         const  token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '9h'});
 
         return res.json({
-          message: 'sucess',
+          message: 'sucessfully logged in!!!',
+          id: result._id,
+          vendor: result.vendor,
           token: token
         });
       });

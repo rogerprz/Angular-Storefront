@@ -5,11 +5,14 @@ import { Router } from '@angular/router'
 export class AuthService {
 
   storageKey: string = 'session-token'
-
+  id: string = 'id'
   constructor(private router: Router) { }
 
   setToken(token: string) {
     localStorage.setItem(this.storageKey, token);
+  }
+  setID(id: string){
+    localStorage.setItem(this.id, id)
   }
 
   getToken() {
@@ -21,7 +24,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem(this.storageKey);
+    localStorage.clear();
     this.router.navigate(['/login'])
   }
 }

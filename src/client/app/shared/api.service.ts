@@ -62,7 +62,7 @@ export class ApiService {
 
     console.log(error);
 
-    return Observable.throw(error);
+    return Observable.throwError(error);
   }
 
 }
