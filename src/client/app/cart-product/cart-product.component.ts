@@ -10,7 +10,7 @@ export class CartProductComponent implements OnInit {
 
   @Input() cartProduct: CartProduct;
 
-  @HostBinding('class') columnClass = 'sixteen wide column';
+  @HostBinding('class') columnClass = 'four wide column';
   constructor() { }
 
   ngOnInit() {

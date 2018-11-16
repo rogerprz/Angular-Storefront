@@ -69,7 +69,7 @@ function apiRouter(database) {
   // users with :id
   router.get('/users/:id', (req, res) => {
     const user_id = req.params.id;
-    var id = new mongoDB.ObjectID(user_id);
+    const id = new mongoDB.ObjectID(user_id);
 
     const usersCollection = database.collection('users');
 
@@ -81,16 +81,26 @@ function apiRouter(database) {
     .catch(err => console.log(err));
 
   });
+  // add product to cart/session
   router.post('/users/:id', (req, res) => {
-    const user = req.body;
-    console.log("Users route");
+    const user_id = req.params.id;
+    const id = new mongoDB.ObjectID(user_id);
+    const newProduct = req.body
+    console.log("user iiid", id);
+    // console.log("Add to cart route");
+    console.log("bodyyy params",req.body);
+    console.log("*************************");
     const usersCollection = database.collection('users');
 
-    usersCollection.insertOne(user, (err, r) => {
+    usersCollection.findOneAndUpdate({ _id: id },{
+      "$push": {
+        cart: newProduct }
+      },
+        (err, r) => {
       if (err) {
-        return res.status(500).json({ error: 'Error inserting new record.' })
+        return res.status(500).json({ error: 'Error adding to cart' })
       }
-      const newRecord = r.ops[0];
+      const newRecord = r.value.cart;
 
       return res.status(201).json(newRecord);
     });
