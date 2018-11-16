@@ -30,9 +30,7 @@ export class LoginComponent implements OnInit {
 
     this.api.post('authenticate', payload)
     .subscribe(data => {
-      // console.log("WHAT DATA",data)
-      // console.log("DATA ID", data.id)
-      // console.log("DATA _ID", data._id)
+  
 
       this.auth.setToken(data.token);
       this.auth.setID(data.id);

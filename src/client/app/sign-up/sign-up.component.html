@@ -1,5 +1,6 @@
 
 <div class="signUp-container">
+  <h1>New User/Vendor Signup</h1>
   <form class="ui big form" #signUpForm="ngForm" (submit)="onSubmit(signUpForm)">
   <div class="field">
     <label>Username</label>
@@ -12,6 +13,15 @@
   <div class="ui checkbox">
   <input type="checkbox" name="vendor">
   <label> Vendor Login</label>
+</div>
+<div
+    class="field ui checkbox"
+    ng-show="vendor">
+  <label> Vendor Login</label>
+  <input
+      type="checkbox"
+      ng-model="vendor"
+      name="vendor" ngModel>
 </div>
   <button type="submit" class="ui primary button float right floated">Login/Sign-Up</button>
   </form>

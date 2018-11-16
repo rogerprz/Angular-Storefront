@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 // import { ContactListComponent } from './contact-list/contact-list.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+
 import { AddProductComponent } from './add-product/add-product.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { AuthGuard } from './auth.guard';
@@ -18,6 +20,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent
   },
   {
     path: 'products',

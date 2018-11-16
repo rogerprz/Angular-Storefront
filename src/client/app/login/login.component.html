@@ -1,5 +1,5 @@
-<h1>Login</h1>
 <div class="login-container">
+  <h1>Login</h1>
   <form class="ui big form" #loginForm="ngForm" (submit)="onSubmit(loginForm)">
   <div class="field">
     <label>Username</label>
@@ -9,10 +9,19 @@
     <label>Password</label>
     <input type="password" name="password" placeholder="Password" ngModel>
   </div>
-  <div class="ui checkbox">
-  <input type="checkbox" name="vendor">
-  <label> Vendor Login</label>
-</div>
+  <div class="field">
+    <label>Enter Vendor Code</label>
+    <input type="password" name="password" placeholder="Enter Vendor Code..." ngModel>
+  </div>
+  <div
+      class="field ui checkbox"
+      ng-show="vendor">
+    <label> Vendor Login</label>
+    <input
+        type="checkbox"
+        ng-model="vendor"
+        name="vendor" ngModel>
+  </div>
   <button type="submit" class="ui primary button float right floated">Login/Sign-Up</button>
   </form>
 </div>
