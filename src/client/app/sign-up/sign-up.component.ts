@@ -38,20 +38,21 @@ export class SignUpComponent implements OnInit {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    if (formValues.vendorCode !== "fastspring"){
+    if (formValues.vendorCode.length > 0){
       return alert("Invalide Vendor Code..")
     }
     else if(formValues.vendorCode === "fastspring"){
-      this.api.post('users', user ) //,requestOptions
-        .subscribe(data => {
-          console.log("dataaa",data)
-          this.auth.setToken(data.token);
-          this.auth.setID(data.id);
-          this.auth.setVendor(data.vendor);
-          this.router.navigate(['/products']);
-          });
+      user.vendor = true;
+      user.admin = true;
     }
-
+    this.api.post('users', user ) //,requestOptions
+      .subscribe(data => {
+        console.log("dataaa",data)
+        this.auth.setToken(data.token);
+        this.auth.setID(data.id);
+        this.auth.setVendor(data.vendor);
+        this.router.navigate(['/products']);
+        });
   }
 
 }

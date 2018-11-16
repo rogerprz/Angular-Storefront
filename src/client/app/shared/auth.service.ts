@@ -26,6 +26,14 @@ export class AuthService {
   isLoggedIn() {
     return this.getToken() !== null;
   }
+  isUser() {
+    const validUser =localStorage.getItem(this.vendor) == "false"
+    return validUser
+  }
+  isVendor(){
+    const validVendor =localStorage.getItem(this.vendor) == "true"
+    return validVendor
+  }
 
   logout() {
     localStorage.clear();

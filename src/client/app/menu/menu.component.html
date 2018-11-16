@@ -14,32 +14,30 @@
       Products
   </button>
   </div>
-  <div class="item" *ngIf="auth.isLoggedIn()">
+  <div class="item" *ngIf="auth.isVendor()">
     <button [routerLink]="['/add-product']" class="ui basic button">
       <i class="add sign-in icon" aria-hidden="true"></i>
       Add Product
   </button>
   </div>
-  <div class=" ui buttons" *ngIf="!auth.isLoggedIn()">
-    <button [routerLink]="['/login']" class="ui inverted red button">
-      <i class="user icon" aria-hidden="true"></i>
-      Login
-    </button>
-    <div class="or"></div>
-    <button [routerLink]="['/sign-up']" class="ui inverted blue button">
-      <i class="signup icon" aria-hidden="true"></i>
-      Sign-Up
-    </button>
-  </div>
-  <div class="item" *ngIf="!auth.isLoggedIn()">
-
+  <div class=" ui buttons"
+    *ngIf="!auth.isLoggedIn()">
+      <button [routerLink]="['/login']" class="ui inverted red button">
+        <i class="user icon" aria-hidden="true"></i>
+        Login
+      </button>
+      <div class="or"></div>
+      <button [routerLink]="['/sign-up']" class="ui inverted blue button">
+        <i class="signup icon" aria-hidden="true"></i>
+        Sign-Up
+      </button>
   </div>
   <div class="right menu" *ngIf="auth.isLoggedIn()">
     <button class="ui primary button logout" (click)="logout()">
       Logout
     </button>
   </div>
-  <div class="item" *ngIf="auth.isLoggedIn()">
+  <div class="item" *ngIf="auth.isUser()">
     <button [routerLink]="['/cart']" class="ui basic button">
       <i class="icon cart" aria-hidden="true"></i>
 
