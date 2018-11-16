@@ -25,7 +25,6 @@ function apiRouter(database) {
         password: result.password
       }
       const  token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '9h'});
-      console.log("tokennn", token);
       return res.json({
         message: 'sucessfully logged in!!!',
         id: result._id,

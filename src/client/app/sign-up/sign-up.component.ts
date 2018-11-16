@@ -25,22 +25,23 @@ export class SignUpComponent implements OnInit {
 
 
     const formValues = Object.assign({}, form.value);
+
+    const user: User = {
+      username:   formValues.username,
+      password:   formValues.password,
+      vendor:     false,
+      admin:      false,
+      cart:       [],
+      orders:     [],
+    }
+
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
     if (formValues.vendorCode !== "fastspring"){
       return alert("Invalide Vendor Code..")
-    } else{
-      const user: User = {
-        username:   formValues.username,
-        password:   formValues.password,
-        vendor:     true,
-        admin:      true,
-      }
-
-
-      const headers = new Headers();
-      headers.append('Content-Type', 'application/json');
-
-      // const requestOptions = new RequestOptions({ headers: headers });
-
+    }
+    else if(formValues.vendorCode === "fastspring"){
       this.api.post('users', user ) //,requestOptions
         .subscribe(data => {
           console.log("dataaa",data)
@@ -49,8 +50,8 @@ export class SignUpComponent implements OnInit {
           this.auth.setVendor(data.vendor);
           this.router.navigate(['/products']);
           });
-
     }
+
   }
 
 }

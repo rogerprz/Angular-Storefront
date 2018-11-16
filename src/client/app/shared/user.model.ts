@@ -1,6 +1,8 @@
 export interface User {
   username: string;
   password: string;
-  vendor: true;
-  admin: true;
+  cart: any[];
+  vendor: boolean;
+  admin: boolean;
+  orders: any[];
 }
