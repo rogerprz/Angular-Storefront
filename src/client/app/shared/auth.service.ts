@@ -6,6 +6,7 @@ export class AuthService {
 
   storageKey: string = 'session-token'
   id: string = 'id'
+  vendor: string = 'vendor'
   constructor(private router: Router) { }
 
   setToken(token: string) {
@@ -13,6 +14,9 @@ export class AuthService {
   }
   setID(id: string){
     localStorage.setItem(this.id, id)
+  }
+  setVendor(vendor: string){
+    localStorage.setItem(this.vendor, vendor)
   }
 
   getToken() {

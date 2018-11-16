@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
       debugger
       this.auth.setToken(data.token);
       this.auth.setID(data.id);
+      this.auth.setVendor(data.vendor);
+
 
       this.router.navigate(['/products']);
     })
