@@ -8,13 +8,16 @@
       <div>Type: {{product.format}}</div>
       <div>Price:
         <i class="icon dollar sign"></i>
-        {{product.unit_price}}
+        {{product.unit_price.toFixed(2)}}
       </div>
       <div>
         Current discount:
         <i class="icon dollar sign"></i>
-        {{product.discount_price}}
+        {{product.discount_price.toFixed(2)}}
       </div>
+      <h4>  Final Price:<i class="icon dollar sign"></i>
+        {{(product.unit_price - product.discount_price).toFixed(2)}}
+      </h4>
     </div>
 
   </div>

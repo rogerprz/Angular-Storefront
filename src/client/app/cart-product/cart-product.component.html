@@ -8,14 +8,14 @@
     <a class="header">{{cartProduct.name}}</a>
     <div class="description">
       <div>Type: {{cartProduct.format}}</div>
-      <div>Price:
+      <div>Original Price:
         <i class="icon dollar sign"></i>
-        {{cartProduct.unit_price}}
+        {{cartProduct.unit_price.toFixed(2)}}
       </div>
       <div>
-        Current discount:
+        Discount:
         <i class="icon dollar sign"></i>
-        {{cartProduct.discount_price}}
+        {{cartProduct.discount_price.toFixed(2)}}
       </div>
     </div>
 
