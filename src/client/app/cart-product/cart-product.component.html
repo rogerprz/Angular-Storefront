@@ -17,6 +17,10 @@
         <i class="icon dollar sign"></i>
         {{cartProduct.discount_price.toFixed(2)}}
       </div>
+      <h4>  Final Price:<i class="icon dollar sign"></i>
+        {{(cartProduct.unit_price - cartProduct.discount_price).toFixed(2)}}
+      </h4>
+
     </div>
 
   </div>
