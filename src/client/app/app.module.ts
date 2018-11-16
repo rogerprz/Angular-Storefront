@@ -15,6 +15,9 @@ import { CartListComponent } from './cart-list/cart-list.component';
 import { CartProductComponent } from './cart-product/cart-product.component';
 import { AuthService } from './shared/auth.service';
 import { AuthGuard } from './auth.guard';
+import { AddCouponComponent } from './add-coupon/add-coupon.component';
+import { CouponListComponent } from './coupon-list/coupon-list.component';
+import { CouponComponent } from './coupon/coupon.component';
 
 
 @NgModule({
@@ -27,6 +30,9 @@ import { AuthGuard } from './auth.guard';
     LoginComponent,
     CartListComponent,
     CartProductComponent,
+    AddCouponComponent,
+    CouponListComponent,
+    CouponComponent,
   ],
   imports: [
     BrowserModule,
