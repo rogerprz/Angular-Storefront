@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { Product } from '../shared/product.model'
 import { CartProduct } from '../shared/cart-product.model'
-import { NgForm } from '@angular/forms';
+// import { NgForm } from '@angular/forms';
 import { ApiService } from '../shared/api.service'
 
 
