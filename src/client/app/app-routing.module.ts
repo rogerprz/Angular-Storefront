@@ -5,7 +5,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddCouponComponent } from './add-coupon/add-coupon.component';
-
+import { CheckoutComponent } from './checkout/checkout.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { AuthGuard } from './auth.guard';
@@ -44,6 +44,11 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
     canActivate: [AuthGuard]
   },
   {

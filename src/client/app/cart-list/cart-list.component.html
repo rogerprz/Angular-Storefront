@@ -1,3 +1,10 @@
+<h1> Cart </h1>
+<div class="item checkout-button" >
+  <button [routerLink]="['/checkout']" class="ui green large button">
+    <i class="icon cart" aria-hidden="true"> </i>
+    Checkout
+  </button>
+</div>
 <div class="ui container">
   <div class="ui grid">
     <app-cartProduct *ngFor="let cartProduct of cartProducts" [cartProduct]="cartProduct"></app-cartProduct>

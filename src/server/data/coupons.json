@@ -1,18 +1,18 @@
   [
       {
-        "codeValue": "20dollarsoff",
+        "couponValue": "20dollarsoff",
         "discountType": "amount",
         "discountValue": 20,
         "vendorUsername": "newAdmin"
       },
       {
-        "codeValue": "20dollarsoff",
+        "couponValue": "20dollarsoff",
         "discountType": "amount",
         "discountValue": 20,
         "vendorUsername": "newAdmin"
       },
       {
-        "codeValue": "20dollarsoff",
+        "couponValue": "20dollarsoff",
         "discountType": "amount",
         "discountValue": 20,
         "vendorUsername": "newAdmin"

@@ -1,3 +1,9 @@
 .container {
   margin-top: 50px;
 }
+
+.checkout-button{
+  position:fixed;
+  top: 100px;
+  right: 50px;
+}

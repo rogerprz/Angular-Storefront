@@ -32,6 +32,7 @@ export class AddCouponComponent implements OnInit {
 
     this.api.post('coupons', coupon )
       .subscribe(data => {
+        console.log("DATAAA",data);
         form.reset();
         this.loading = false;
         this.newCoupon = data;
