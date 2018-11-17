@@ -3,7 +3,18 @@
 }
 
 .checkout-button{
-  position:fixed;
+  position:absolute;
   top: 100px;
   right: 50px;
+}
+
+.displayTotal{
+  margin:50px auto;
+
+}
+
+.checkoutFooter{
+  margin:50px auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }

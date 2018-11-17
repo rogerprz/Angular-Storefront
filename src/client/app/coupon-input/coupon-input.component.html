@@ -1,0 +1,11 @@
+<form class="ui big form couponInputCont"
+    #couponForm="ngForm" (submit)="applyCoupon(couponForm)">
+<div class="field wide four couponInputSubCont">
+  <input type="text" name="couponCode" placeholder="Enter Coupon Code..." ngModel>
+    <button
+      type="submit"
+      class="ui primary button float right floated">
+      Apply Coupon
+    </button>
+  </div>
+</form>

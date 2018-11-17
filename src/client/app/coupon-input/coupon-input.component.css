@@ -1,0 +1,15 @@
+.couponInputCont {
+  margin: 0 auto;
+  
+  width: 100%;
+}
+
+.couponInputCont input {
+  width: 300px;
+}
+.couponInputSubCont {
+
+  display: flex;
+  /* grid-template-columns: 70% 30%; */
+
+}
