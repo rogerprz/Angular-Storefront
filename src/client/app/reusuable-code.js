@@ -31,3 +31,22 @@ router.get('/users', (req, res) => {
 //   });
 //
 // });
+
+
+{},{$pull:{"data":{"id":3}}},{multi:true}
+
+usersCollection.findOneAndUpdate({ _id: id },{
+  $pull: {
+    "cart" : {
+      _id: productID }
+      }
+    }, false, true,
+    (err, r) => {
+  if (err) {
+    return res.status(500).json({ error: 'Error adding to cart' })
+  }
+  console.log("WE DID SOMETHING!!!");
+  const newRecord = r.value.cart;
+
+  return res.status(201).json(newRecord);
+});

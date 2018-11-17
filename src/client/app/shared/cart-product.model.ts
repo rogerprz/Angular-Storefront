@@ -1,4 +1,5 @@
 export interface CartProduct{
+  _id: string;
   name: string;
   selected: boolean;
   quantity: number;

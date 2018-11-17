@@ -35,7 +35,6 @@ export class ProductComponent implements OnInit {
         this.loading = false;
         this.addedToCart = data;
       });
-
-  }
+  };
 
 }

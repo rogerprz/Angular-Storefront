@@ -7,7 +7,7 @@ export class AuthService {
   storageKey: string = 'session-token'
   id: string = 'id'
   vendor: string = 'vendor'
-  username: string='vendorUsername'
+  username: string = 'vendorUsername'
   constructor(private router: Router) { }
 
   setToken(token: string) {

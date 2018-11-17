@@ -1,5 +1,5 @@
 <!-- <div>{{cartProduct.username}}</div> -->
-<div class="ui card">
+<div id="{{cartProduct._id}}" class="ui card">
   <div class="image">
     <img [src]="cartProduct?.imageUrl">
   </div>
@@ -23,7 +23,7 @@
     </div>
 
   </div>
-  <div class="extra content">
+  <div class="extra content ">
     <button data-value="{{cartProduct}}" class="ui basic button center floated" (click)="removeFromCart()">
       <span>Remove &#160;</span>
       <i class="icon cart"></i>

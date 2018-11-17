@@ -145,6 +145,54 @@ function apiRouter(database) {
     });
   });
 
+  // add product to cart/session
+  router.put('/users/:id/cart', (req, res) => {
+    console.log(" ")
+    console.log(" ")
+    console.log(" ")
+
+    console.log("ROUTERPPPPUUUUTTTT");
+    console.log(" ")
+
+    const user_id = req.params.id;
+    const item_id = req.body._id
+    const id = new mongoDB.ObjectID(user_id);
+    const productID = new mongoDB.ObjectID(item_id);
+    const newProduct = req.body
+    console.log("req.paramSSS: ", req.params);
+    console.log(" ")
+    console.log("req.param.id: ", user_id);
+    console.log(" ")
+    console.log("USER___ID: ", id);
+    console.log("PRODUCT__ID: ", productID);
+
+    // console.log("Add to cart route");
+    console.log("bodyyy params",req.body);
+    console.log("*************************");
+    const usersCollection = database.collection('users');
+
+    usersCollection.findOneAndUpdate({
+      "_id": id
+    },{
+      $pull:{
+        cart:{
+          "name": req.body.name
+          }
+        }
+      },
+      {multi:true},
+        (err, r) => {
+      if (err) {
+        return res.status(500).json({ error: 'Error adding to cart' })
+      }
+      console.log("WE DID SOMETHING!!!");
+      console.log('RESULT', r);
+      const newRecord = r;
+
+      return res.status(201).json(newRecord);
+    });
+
+  });
 
   router.post('/authenticate', (req, res) => {
     const user = req.body;

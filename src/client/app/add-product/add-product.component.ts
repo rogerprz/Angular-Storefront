@@ -23,7 +23,7 @@ export class AddProductComponent implements OnInit {
     this.loading = true;
 
     const formValues = Object.assign({}, form.value);
-
+// @ts-ignore
     const product: Product = {
       name:               formValues.name,
       selected:           false,
