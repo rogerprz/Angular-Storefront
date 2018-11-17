@@ -16,7 +16,6 @@ export class CartListComponent implements OnInit {
   ngOnInit() {
     this.api.get(`users/${localStorage.id}`)
       .subscribe(data=> {
-        console.log("DATAAA",data)
         this.cartProducts = data.cart})
   };
 

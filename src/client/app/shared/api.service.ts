@@ -60,7 +60,6 @@ export class ApiService {
       error: body.error
     };
 
-    console.log(error);
 
     return Observable.throwError(error);
   }

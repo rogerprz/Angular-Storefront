@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AddCouponComponent } from './add-coupon/add-coupon.component';
 
 import { AddProductComponent } from './add-product/add-product.component';
 import { CartListComponent } from './cart-list/cart-list.component';
@@ -33,6 +34,11 @@ const routes: Routes = [
   {
     path: 'add-product',
     component: AddProductComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'add-coupon',
+    component: AddCouponComponent,
     canActivate: [AuthGuard]
   },
   {

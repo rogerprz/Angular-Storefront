@@ -1,22 +1,20 @@
-title: "50 Tips and Tricks for MongoDB Developer",
-   author: "Kristina Chodorow",
-   published_date: ISODate("2011-05-06"),
-   pages: 68,
-   language: "English",
-   publisher_id: "oreilly"
-   Coupon:
-    * Code value (which the user types in)
-    * Discount type (percent or amount/value off)
-    * Discount value
-    [Below are not required for creating a coupon]
-    * Date range validity
-
-    [
-      { "couponName": "50% off all clothes",
+  [
+      {
         "codeValue": "20dollarsoff",
         "discountType": "amount",
         "discountValue": 20,
-        "vendor_name": "newAdmin"
+        "vendorUsername": "newAdmin"
       },
-      { "username": "vmejia", "admin": false, "password": "ANz75xWo3n2J3Y"}
+      {
+        "codeValue": "20dollarsoff",
+        "discountType": "amount",
+        "discountValue": 20,
+        "vendorUsername": "newAdmin"
+      },
+      {
+        "codeValue": "20dollarsoff",
+        "discountType": "amount",
+        "discountValue": 20,
+        "vendorUsername": "newAdmin"
+      },
     ]

@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Product } from '../shared/product.model';
 import { ApiService } from '../shared/api.service'
-// import { map } from "rxjs/operators";
 
 @Component({
   selector: 'app-add-product',

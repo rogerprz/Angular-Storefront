@@ -1,3 +1,40 @@
-<p>
-  add-coupon works!
-</p>
+
+<div class="add-form-container">
+  <div class="ui icon message" *ngIf="newCoupon">
+    <i class="notched check green icon"></i>
+    <i class="close icon" (click)="newCoupon = null"></i>
+    <div class="content">
+      <div class="header">
+        New coupon created!
+      </div>
+      <p>Name: {{newCoupon.name}}</p>
+    </div>
+  </div>
+
+  <h2>Create Coupon Form</h2>
+  <form class="ui big form" #couponForm="ngForm" (submit)="onSubmit(couponForm)" [class.loading]="loading">
+
+     <div class="field">
+       <label>Coupon Code name </label>
+       <input type="text" placeholder="Ex. 20OFFORDER" name="couponValue" ngModel>
+     </div>
+     <!-- <span class="circular icon button" data-content="The fixed or percent chosen along wit the amount set below will create coupon for '20% (percent), $20 off (fixed)'">
+        <i class="info icon"></i>
+      </span> -->
+        <div class="field">
+          <label>Discount Type (fixed/percent) </label>
+          <input type="text" placeholder="Format type: fixed or percent" name="discountType" ngModel>
+        </div>
+
+        <div class="field">
+          <label>Discount Value (Enter numbers only, i.e. '10, 20')</label>
+          <input type="text" placeholder="Number will reprepsent amount or percent" name="discountValue" ngModel>
+        </div>
+
+      <button type="submit"
+          class="ui submit large grey button right floated">
+
+          Submit
+      </button>
+  </form>
+</div>

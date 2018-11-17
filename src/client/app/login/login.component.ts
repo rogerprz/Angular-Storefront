@@ -30,11 +30,11 @@ export class LoginComponent implements OnInit {
 
     this.api.post('authenticate', payload)
     .subscribe(data => {
-  
 
       this.auth.setToken(data.token);
       this.auth.setID(data.id);
       this.auth.setVendor(data.vendor);
+      this.auth.setVendorUsername(data.username);
 
 
       this.router.navigate(['/products']);

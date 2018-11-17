@@ -66,6 +66,21 @@ function apiRouter(database) {
       return res.status(201).json(newRecord);
     });
   });
+
+  router.post('/coupons', (req, res) => {
+    const user = req.body;
+    console.log("coupon being created");
+    const couponsCollection = database.collection('coupons');
+
+    couponsCollection.insertOne(user, (err, r) => {
+      if (err) {
+        return res.status(500).json({ error: 'Error inserting new coupon.' })
+      }
+      const newCoupon = r.ops[0];
+
+      return res.status(201).json(newCoupon);
+    });
+  });
   // start of cart
   router.get('/cart', (req, res) => {
     console.log("Products loaded successfully...");
@@ -151,10 +166,10 @@ function apiRouter(database) {
           admin: result.vendor
         }
         const  token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '9h'});
-
         return res.json({
           message: 'sucessfully logged in!!!',
           id: result._id,
+          username: result.username,
           vendor: result.vendor,
           token: token
         });

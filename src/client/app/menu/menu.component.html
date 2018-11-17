@@ -16,9 +16,13 @@
   </div>
   <div class="item" *ngIf="auth.isVendor()">
     <button [routerLink]="['/add-product']" class="ui basic button">
-      <i class="add sign-in icon" aria-hidden="true"></i>
+      <i class="add plus icon" aria-hidden="true"></i>
       Add Product
   </button>
+  <button [routerLink]="['/add-coupon']" class="ui basic button">
+    <i class="add plus icon" aria-hidden="true"></i>
+    Create Product
+</button>
   </div>
   <div class=" ui buttons"
     *ngIf="!auth.isLoggedIn()">
