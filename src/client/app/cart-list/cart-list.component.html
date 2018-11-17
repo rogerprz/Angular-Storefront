@@ -1,4 +1,7 @@
 <h1> Cart </h1>
+<h3>Total after savinggs: ${{totalAfterSavings.toFixed(2)}}</h3>
+
+
 <div class="item checkout-button" >
   <button [routerLink]="['/checkout']" class="ui green large button">
     <i class="icon cart" aria-hidden="true"> </i>
@@ -10,3 +13,8 @@
     <app-cartProduct *ngFor="let cartProduct of cartProducts" [cartProduct]="cartProduct"></app-cartProduct>
   </div>
 </div>
+
+
+<h4>Origina Total: ${{total.toFixed(2)}}</h4>
+<h4>Total Savings: ${{discountTotal.toFixed(2)}}</h4>
+<h3>Total after savinggs: ${{totalAfterSavings.toFixed(2)}}</h3>

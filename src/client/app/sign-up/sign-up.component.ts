@@ -38,7 +38,7 @@ export class SignUpComponent implements OnInit {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    if (formValues.vendorCode.length > 0){
+    if (formValues.vendorCode.length >0 && formValues.vendorCode !== "fastspring"){
       return alert("Invalide Vendor Code..")
     }
     else if(formValues.vendorCode === "fastspring"){

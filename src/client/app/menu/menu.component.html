@@ -36,15 +36,17 @@
         Sign-Up
       </button>
   </div>
-  <div class="right menu" *ngIf="auth.isLoggedIn()">
-    <button class="ui primary button logout" (click)="logout()">
-      Logout
-    </button>
-  </div>
   <div class="item" *ngIf="auth.isUser()">
     <button [routerLink]="['/cart']" class="ui basic button">
       <i class="icon cart" aria-hidden="true"></i>
 
     </button>
   </div>
+
+  <div class="right menu" *ngIf="auth.isLoggedIn()">
+    <button class="ui primary button logout" (click)="logout()">
+      Logout
+    </button>
+  </div>
+
 </div>
