@@ -6,6 +6,7 @@ const mongoDB = require('mongodb')
 
 function apiRouter(database) {
   const router = express.Router();
+
   router.post('/users', (req, res) => {
     const user = req.body;
     if (user.password) {
@@ -147,12 +148,12 @@ function apiRouter(database) {
 
   // add product to cart/session
   router.put('/users/:id/cart', (req, res) => {
-    console.log(" ")
-    console.log(" ")
-    console.log(" ")
-
-    console.log("ROUTERPPPPUUUUTTTT");
-    console.log(" ")
+    // console.log(" ")
+    // console.log(" ")
+    // console.log(" ")
+    //
+    // console.log("ROUTERPPPPUUUUTTTT");
+    // console.log(" ")
 
     const user_id = req.params.id;
     const item_id = req.body._id
@@ -191,6 +192,25 @@ function apiRouter(database) {
 
       return res.status(201).json(newRecord);
     });
+
+  });
+
+  router.get('/coupons', (req, res) => {
+    console.log("Products loaded successfully...");
+    const couponsCollection = database.collection('coupons');
+
+    couponsCollection.findOne({}, (req, res)=>{
+      if (!result) {
+        alert("Coupon not valid!!!")
+        return res.status(404).json({ error: 'coupon not found'})
+      }
+      // if (!bcrypt.compareSync(user.password, result.password)) {
+      //   return res.status(401).json({ error: 'incorrect password'})
+      // }
+    });
+    // .toArray((err, docs) => {
+      // return res.json(docs)
+    // });
 
   });
 
