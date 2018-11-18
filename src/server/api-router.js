@@ -211,7 +211,6 @@ function apiRouter(database) {
     // .toArray((err, docs) => {
       // return res.json(docs)
     // });
-
   });
 
   router.post('/authenticate', (req, res) => {
