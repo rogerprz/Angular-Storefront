@@ -1,18 +1,15 @@
 .container {
   margin-top: 50px;
 }
-
 .checkout-button{
   position:absolute;
   top: 100px;
   right: 50px;
 }
-
 .displayTotal{
   margin:50px auto;
 
 }
-
 .checkoutFooter{
   margin:50px auto;
   display: grid;
