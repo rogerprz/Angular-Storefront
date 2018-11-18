@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output, HostBinding } from '@angular/core';
-import { CartProduct } from '../shared/cart-product.model'
+// import { CartProduct } from '../shared/cart-product.model'
 import { ApiService } from '../shared/api.service'
 
 
@@ -9,35 +9,23 @@ import { ApiService } from '../shared/api.service'
   styleUrls: ['./cart-product.component.css']
 })
 export class CartProductComponent implements OnInit {
+  // @Input() cartProducts: CartProduct[];
 
-  @Input() cartProduct: CartProduct;
-  @Input() cartProducts: CartProduct[];
-
-
+  @Input() cartProduct;
   @HostBinding('class') columnClass = 'four wide column';
-
-  @Output() itemRemoved = new EventEmitter<boolean>();
+  @Output() delete = new EventEmitter();
 
   loading: Boolean = false;
 
-
   constructor(public api: ApiService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   removeFromCart(){
-    // TOFIX
-    document.getElementById(`${this.cartProduct._id}`).remove()
-    this.loading = true;
-    const itemID = this.cartProduct
-    // console.log("itemID",itemID)
-    console.log("START OF PUT", itemID._id)
-    this.api.put(`users/${localStorage.id}/cart`, itemID ) //,requestOptions
-      .subscribe(data => {
-        console.log("SUBSCRIBE_DATA",data);
-        this.cartProducts = data.value.cart;
-      });
+    console.log("removed!!!!")
+    this.delete.emit(this.cartProduct);
+
+    
   }
 
 }
