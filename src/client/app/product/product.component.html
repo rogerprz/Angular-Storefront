@@ -15,12 +15,21 @@
         <i class="icon dollar sign"></i>
         {{product.discount_price.toFixed(2)}}
       </div>
-      <h4>  Final Price:<i class="icon dollar sign"></i>
+      <h4> Final Price: <i class="icon dollar sign"></i>
         {{(product.unit_price - product.discount_price).toFixed(2)}}
       </h4>
     </div>
 
   </div>
+
+  <div class="ui icon message" *ngIf="newItem">
+    <i class="notched check green icon"></i>
+    <i class="close icon" (click)="newItem = null"></i>
+    <div class="content">
+      {{newItem.name}} added to Cart!
+    </div>
+  </div>
+
   <div class="extra content">
     <button data-value="{{product}}" class="ui basic button center floated" (click)="addToCart()">
       <span>Add &#160;</span>

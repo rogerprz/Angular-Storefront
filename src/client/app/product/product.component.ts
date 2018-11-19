@@ -18,22 +18,22 @@ export class ProductComponent implements OnInit {
 
   loading: Boolean = false;
   addedToCart: CartProduct;
-
+  newItem: CartProduct;
   constructor(public api: ApiService) { }
 
   ngOnInit() {
+
   }
   addToCart(){
     this.loading = true;
 
     const addToCart: CartProduct = this.product
 
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
     this.api.post(`users/${localStorage.id}`, addToCart ) //,requestOptions
       .subscribe(data => {
         this.loading = false;
         this.addedToCart = data;
+        this.newItem = addToCart;
       });
   };
 
