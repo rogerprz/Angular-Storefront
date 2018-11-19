@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Coupon } from '../shared/coupon.model'
+import { ApiService } from '../shared/api.service'
 
 @Component({
   selector: 'app-coupon-list',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CouponListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public api: ApiService) { }
+
+  coupons: Coupon[];
 
   ngOnInit() {
+    this.api.get('coupons')
+      .subscribe(data=> this.coupons = data);
   }
 
 }

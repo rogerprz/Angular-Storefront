@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Coupon } from '../shared/coupon.model'
+import { ApiService } from '../shared/api.service'
 
 @Component({
   selector: 'app-coupon',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CouponComponent implements OnInit {
 
-  constructor() { }
+  @Input() coupon: Coupon;
+
+  @HostBinding('class') columnClass=" four wide column"
+
+
+  constructor(public api: ApiService) { }
 
   ngOnInit() {
   }

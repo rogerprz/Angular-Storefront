@@ -90,7 +90,6 @@ function apiRouter(database) {
     cartCollection.find({}).toArray((err, docs) => {
       return res.json(docs)
     });
-
   });
   router.post('/cart', (req, res) => {
     const user = req.body;
@@ -189,6 +188,16 @@ function apiRouter(database) {
           data: result
         })
 
+    });
+
+  });
+
+  router.get('/coupons', (req, res) => {
+    console.log("Getting coupons loaded successfully...");
+    const couponsCollection = database.collection('coupons');
+
+    couponsCollection.find({}).toArray((err, docs) => {
+      return res.json(docs)
     });
 
   });
