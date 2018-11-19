@@ -6,7 +6,8 @@
   <div class="content">
     <a class="header">{{cartProduct.name}}</a>
     <div class="description">
-      <div>Type: {{cartProduct.format}}</div>
+      <div>Type: {{cartProduct.format}} &#160;|&#160; Quantity: {{cartProduct.quantity}}</div>
+
       <div>Original Price:
         <i class="icon dollar sign"></i>
         {{cartProduct.unit_price.toFixed(2)}}

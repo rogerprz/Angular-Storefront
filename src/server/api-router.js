@@ -141,7 +141,7 @@ function apiRouter(database) {
     });
   });
 
-  // add product to cart/session
+  // remove product to cart/session
   router.put('/users/:id/cart', (req, res) => {
     const user_id = req.params.id;
     const item_id = req.body._id
