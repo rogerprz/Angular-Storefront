@@ -8,15 +8,15 @@ import { ApiService } from '../shared/api.service';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
-   total = 0;
-   count = 0;
-   discountTotal = 0;
-   totalAfterSavings = 0
+   total: number = 0;
+   count: number = 0;
+   discountTotal: number = 0;
+   totalAfterSavings: number = 0
    cartProducts: CartProduct[];
    currCouponValue;
-   finalTotal = -1;
-   couponName = '';
-   percentSavings = 100
+   finalTotal: number = -1;
+   couponName: string = '';
+   percentSavings: number = 100
   constructor( public api: ApiService ) { }
 
   ngOnInit() {

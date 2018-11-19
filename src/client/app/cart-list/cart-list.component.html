@@ -23,7 +23,7 @@
       <h3>Total items : {{count}}</h3>
       <h3>Original Total: ${{total.toFixed(2)}}</h3>
       <h3>Savings: ${{discountTotal.toFixed(2)}}</h3>
-      <h3>Percent Savings: {{this.percentSavings * (this.discountTotal/this.total).toFixed(3)}}%</h3>
+      <h3>Percent Savings: {{(this.percentSavings * (this.discountTotal/this.total)).toFixed(3)}}%</h3>
       <h3>Total: ${{totalAfterSavings.toFixed(2)}}</h3>
       <div *ngIf="finalTotal !== -1">
         <h4>Coupon applied: {{couponName}}</h4>

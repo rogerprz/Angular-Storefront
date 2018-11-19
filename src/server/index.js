@@ -7,7 +7,7 @@ const createExpressApp = require('./create-express-app');
 
 require('dotenv').config();
 
-MongoClient.connect(process.env.DB_CONN, (err, db) => {
+MongoClient.connect(process.env.MONGODB_URI, (err, db) => {
 
   console.log('connected to mongodb...');
 
