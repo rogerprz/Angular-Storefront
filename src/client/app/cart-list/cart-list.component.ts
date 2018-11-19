@@ -23,7 +23,7 @@ export class CartListComponent implements OnInit {
   getCartItems(){
     this.api.get(`users/${localStorage.id}`)
       .subscribe(data=> {
-        console.log("GETCART",data.cart);
+        // console.log("GETCART",data.cart);
         this.cartTotal(data.cart);
         this.cartProducts = data.cart})
   };
@@ -33,10 +33,8 @@ export class CartListComponent implements OnInit {
     this.api.put(`users/${localStorage.id}/cart`, cartProduct )
       .subscribe(data => {
         let cart = data.value.cart
-        console.log("SUBSCRIBE_DATA",data);
         this.getCartItems();
         this.cartTotal(cart)
-        // this.cartTotal(data.value.cart)
       });
   };
   verifyCoupon(coupon){
@@ -78,8 +76,3 @@ export class CartListComponent implements OnInit {
     }
   }
 };
-
-// subtractCartItemFromCart(itemPrice, itemDiscount){
-//   this.total = this.total - itemPrice;
-//   this.discountTotal = this.discountTotal - itemDiscount;
-// }

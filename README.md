@@ -3,6 +3,7 @@
 
 ## Getting Started
 
+** Note: to create a vendor login, code: fastspring**
 
 ## Dependencies | Installation Requirements
 * Run `npm install`
