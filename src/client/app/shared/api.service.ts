@@ -4,6 +4,8 @@ import { map } from "rxjs/operators";
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw'
+import { _throw } from 'rxjs/observable/throw';
+import { throwError } from 'rxjs';
 import 'rxjs/add/operator/catch';
 import { AuthService } from './auth.service';
 
@@ -61,7 +63,7 @@ export class ApiService {
     };
 
 
-    return Observable.throwError(error);
+    return throwError(error);
   }
 
 }

@@ -12,7 +12,7 @@ export class CartListComponent implements OnInit {
    discountTotal = 0;
    totalAfterSavings = 0
    cartProducts: CartProduct[];
-
+   currentCoupon;
 
   constructor( public api: ApiService ) { }
 
@@ -29,20 +29,33 @@ export class CartListComponent implements OnInit {
 
   deleteCartItem(cartProduct){
     console.log(cartProduct);
-
     this.api.put(`users/${localStorage.id}/cart`, cartProduct )
       .subscribe(data => {
         let cart = data.value.cart
-        // this.subtractCartItemFromCart(
-        //     cartProduct.unit_price,
-        //     cartProduct.discount_price)
-
         console.log("SUBSCRIBE_DATA",data);
         this.getCartItems();
         this.cartTotal(cart)
         // this.cartTotal(data.value.cart)
       });
   };
+  verifyCoupon(coupon){
+    console.log("CODE:", coupon.couponCode);
+    console.log("GOTCOUPON");
+    this.api.post(`/coupons/${coupon.couponCode}`, coupon)
+    .subscribe(coupon => {
+      // let cart = coupon.value.cart
+      console.log("SUBSCRIBE_DATA",coupon);
+      if (coupon === null){
+        alert("Coupon not available")
+      } else{
+        
+      }
+      // this.getCartItems();
+      // this.cartTotal(cart)
+      // this.cartTotal(coupon.value.cart)
+    });
+  }
+
 
   cartTotal(cartArray){
     this.total = 0;

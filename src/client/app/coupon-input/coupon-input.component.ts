@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
-import { AuthService } from '../shared/auth.service';
+// import { AuthService } from '../shared/auth.service';
 @Component({
   selector: 'app-coupon-input',
   templateUrl: './coupon-input.component.html',
@@ -9,14 +9,18 @@ import { AuthService } from '../shared/auth.service';
 })
 export class CouponInputComponent implements OnInit {
 
-  constructor(private api: ApiService,
-              private auth: AuthService,
-              ) { }
+  @Output() coupon = new EventEmitter();
+  @Input() couponInput : string;
+
+  constructor(public api: ApiService) { }
 
   ngOnInit() {
   }
-  applyCoupon(form: NgForm){
-
+  submitCoupon(form: NgForm){
+    const value = form.value
+    console.log("verifymethod");
+    console.log(value);
+    this.coupon.emit(value)
   }
 
 }

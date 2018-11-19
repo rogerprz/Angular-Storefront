@@ -148,13 +148,6 @@ function apiRouter(database) {
 
   // add product to cart/session
   router.put('/users/:id/cart', (req, res) => {
-    // console.log(" ")
-    // console.log(" ")
-    // console.log(" ")
-    //
-    // console.log("ROUTERPPPPUUUUTTTT");
-    // console.log(" ")
-
     const user_id = req.params.id;
     const item_id = req.body._id
     const id = new mongoDB.ObjectID(user_id);
@@ -195,22 +188,34 @@ function apiRouter(database) {
 
   });
 
-  router.get('/coupons', (req, res) => {
-    console.log("Products loaded successfully...");
+  router.post(`/coupons/:coupon`, (req, res) => {
+    const coupon = req.params.coupon
+    console.log("GOTCOUPON");
+    console.log("REQQQ", req);
+
+    console.log("coupon.params.couponNNN", req.params.coupon);
     const couponsCollection = database.collection('coupons');
 
-    couponsCollection.findOne({}, (req, res)=>{
-      if (!result) {
-        alert("Coupon not valid!!!")
-        return res.status(404).json({ error: 'coupon not found'})
-      }
-      // if (!bcrypt.compareSync(user.password, result.password)) {
-      //   return res.status(401).json({ error: 'incorrect password'})
-      // }
+    couponsCollection.findOne({couponValue: coupon},
+      (req, result)=>{
+        if (!result) {
+          // alert("Coupon not valid!!!")
+          return res.status(204).json({ error: 'coupon not found'})
+        }
+        console.log("RRR",res);
+        console.log("RESSULT",result);
+        return res.status(201).json({
+          message: "Success Coupon found!",
+          couponCode: result.couponValue,
+          discountValue: result.discountValue,
+          discountType: result.discountType,
+          couponID: result._id,
+          vendorUsername: result.vendorUsername,
+          data: result
+        })
+
     });
-    // .toArray((err, docs) => {
-      // return res.json(docs)
-    // });
+
   });
 
   router.post('/authenticate', (req, res) => {
