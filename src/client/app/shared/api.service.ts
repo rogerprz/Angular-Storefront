@@ -4,7 +4,7 @@ import { map } from "rxjs/operators";
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw'
-import { _throw } from 'rxjs/observable/throw';
+// import { _throw } from 'rxjs/observable/throw';
 import { throwError } from 'rxjs';
 import 'rxjs/add/operator/catch';
 import { AuthService } from './auth.service';
@@ -67,3 +67,10 @@ export class ApiService {
   }
 
 }
+// couponCode: "20PERCENTOFF"
+// couponID: "5bef674d381a3a75eec794b3"
+// data: {_id: "5bef674d381a3a75eec794b3", couponValue: "20PERCENTOFF", discountType: "percent", discountValue: "20", vendorUsername: "newAdmin"}
+// discountType: "percent"
+// discountValue: "20"
+// message: "Success Coupon found!"
+// vendorUsername: "newAdmin"
