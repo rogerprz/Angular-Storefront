@@ -14,7 +14,7 @@ function apiRouter(database) {
     }
     const usersCollection = database.collection('users');
 
-    usersCollection.createUser(user, (err, result) => {
+    usersCollection.insertOne(user, (err, result) => {
 
       result = result.ops[0]
       if (!result) {

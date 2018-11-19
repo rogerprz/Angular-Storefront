@@ -45,6 +45,10 @@ export class SignUpComponent implements OnInit {
       user.vendor = true;
       user.admin = true;
     }
+    // this.api.get('users/',)
+      // .subscribe(data=>{
+      //
+      // })
     this.api.post('users', user ) //,requestOptions
       .subscribe(data => {
         console.log("dataaa",data)
