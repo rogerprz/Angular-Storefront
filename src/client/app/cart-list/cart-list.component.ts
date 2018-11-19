@@ -9,6 +9,7 @@ import { ApiService } from '../shared/api.service';
 })
 export class CartListComponent implements OnInit {
    total = 0;
+   count = 0;
    discountTotal = 0;
    totalAfterSavings = 0
    cartProducts: CartProduct[];
@@ -54,9 +55,11 @@ export class CartListComponent implements OnInit {
 
   cartTotal(cartArray){
     this.total = 0;
+    this.count = 0;
     this.discountTotal = 0;
     this.totalAfterSavings = 0
     cartArray.forEach(item =>{
+      this.count += 1
       this.total+= item.unit_price
       this.discountTotal+= item.discount_price
       this.totalAfterSavings = this.total - this.discountTotal
