@@ -9,6 +9,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { AuthGuard } from './auth.guard';
+import { VendorGuard } from './vendor.guard';
+
 
 
 const routes: Routes = [
@@ -34,12 +36,12 @@ const routes: Routes = [
   {
     path: 'add-product',
     component: AddProductComponent,
-    canActivate: [AuthGuard]
+    canActivate: [VendorGuard]
   },
   {
     path: 'add-coupon',
     component: AddCouponComponent,
-    canActivate: [AuthGuard]
+    canActivate: [VendorGuard]
   },
   {
     path: 'cart',
