@@ -1,19 +1,19 @@
   [
       {
         "couponValue": "20dollarsoff",
-        "discountType": "amount",
+        "discountType": "fixed",
         "discountValue": 20,
         "vendorUsername": "newAdmin"
       },
       {
         "couponValue": "20dollarsoff",
-        "discountType": "amount",
+        "discountType": "fixed",
         "discountValue": 20,
         "vendorUsername": "newAdmin"
       },
       {
         "couponValue": "20dollarsoff",
-        "discountType": "amount",
+        "discountType": "fixed",
         "discountValue": 20,
         "vendorUsername": "newAdmin"
       },

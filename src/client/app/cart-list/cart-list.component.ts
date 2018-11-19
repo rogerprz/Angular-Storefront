@@ -14,7 +14,7 @@ export class CartListComponent implements OnInit {
    cartProducts: CartProduct[];
    currCouponValue;
    finalTotal = -1;
-   couponName;
+   couponName = '';
   constructor( public api: ApiService ) { }
 
   ngOnInit() {
@@ -40,20 +40,16 @@ export class CartListComponent implements OnInit {
       });
   };
   verifyCoupon(coupon){
-    console.log("CODE:", coupon.couponCode);
-    console.log("GOTCOUPON");
+
     this.api.post(`/coupons/${coupon.couponCode}`, coupon)
     .subscribe(c => {
-      // let cart = coupon.value.cart
       console.log("SUBSCRIBE_DATA",c);
       if (coupon === null){
         return alert("Coupon not available")
-
       } else{
-        this.finalTotal = this.determineCouponDiscount(c.discountValue, c.discountType)
-        this.couponName = c.couponCode
-        console.log(this.finalTotal, "DISCOUNT")
-      }
+        this.finalTotal = this.determineCouponDiscount( c.discountValue, c.discountType)
+        this.couponName = c.couponCode;
+      };
 
     });
   }
@@ -73,13 +69,12 @@ export class CartListComponent implements OnInit {
     if (type ==="percent"){
       this.currCouponValue = 1 - parseFloat(`.${amount}`)
 
-      return (this.totalAfterSavings * this.currCouponValue).toFixed(2)
+      return (this.totalAfterSavings * this.currCouponValue)
     }
     else if (type === "amount" || type==="fixed"){
       this.currCouponValue = parseFloat(amount)
-      console.log("crr", this.currCouponValue)
-      let final = (this.totalAfterSavings - this.currCouponValue).toFixed(2)
-      return (final <= 0) ? 0 : final;
+      let final = (this.totalAfterSavings - this.currCouponValue);
+      return ((final <= 0) ? 0 : final);
     }
   }
 };
