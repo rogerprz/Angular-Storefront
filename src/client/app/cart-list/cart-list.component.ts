@@ -16,6 +16,7 @@ export class CartListComponent implements OnInit {
    currCouponValue;
    finalTotal = -1;
    couponName = '';
+   percentSavings = 100
   constructor( public api: ApiService ) { }
 
   ngOnInit() {

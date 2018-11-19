@@ -25,7 +25,6 @@ export class CartProductComponent implements OnInit {
     console.log("removed!!!!")
     this.delete.emit(this.cartProduct);
 
-    
   }
 
 }
