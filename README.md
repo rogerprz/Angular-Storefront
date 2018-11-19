@@ -5,7 +5,7 @@
 
 
 ## Dependencies | Installation Requirements
-* run `npm install`
+* Run `npm install`
 
 
 ## Running App locally
@@ -19,7 +19,7 @@
 
 ### 2. Seed DB
 
- run `npm run sample` - will seed db with data for users/vendors, coupons, and products.
+ Run `npm run sample` - will seed db with data for users/vendors, coupons, and products.
 
 
 ### 3. Run Local Build Demo
@@ -47,4 +47,4 @@
 
 ## Authors
 
-* **Roger Perez** - *Creator* - [Personal Website](https://rogerperez.us)
+* **Roger Perez** - *Sole Developer* - [Personal Website](https://rogerperez.us)
