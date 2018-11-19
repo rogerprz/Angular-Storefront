@@ -5,31 +5,31 @@
 
 
 ## Dependencies | Installation Requirements
-* run ` npm install`
+* run `npm install`
 
 
 ## Running App locally
 
-### Create `.env` file in root folder
+### 1. Create `.env` file in root folder
 
 * `DB_CONN=<url/admin:password provided in email>`
 * `JWT_SECRET=<long password || or use link below to generate pw>`
 
 * [Password Gen](https://www.grc.com/passwords.htm) - password generator
 
-### Seed DB
+### 2. Seed DB
 
  run `npm run sample` - will seed db with data for users/vendors, coupons, and products.
+
+
+### 3. Run Local Build Demo
+
+ Run `npm start` to build the project.
 
 
 ### Development server
 
  For development run `npm run watch` - will open window/tab on localhost 4200.
-
-
-### Run Local Build Demo
-
-Run `npm start` to build the project.
 
 ## Built With
  Build using the MEAN stack
