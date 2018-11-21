@@ -38,17 +38,13 @@ export class SignUpComponent implements OnInit {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    if (formValues.vendorCode.length >0 && formValues.vendorCode !== "fastspring"){
+    if (formValues.vendorCode.length > 0 && formValues.vendorCode !== "fastspring"){
       return alert("Invalide Vendor Code..")
     }
     else if(formValues.vendorCode === "fastspring"){
       user.vendor = true;
       user.admin = true;
     }
-    // this.api.get('users/',)
-      // .subscribe(data=>{
-      //
-      // })
     this.api.post('users', user ) //,requestOptions
       .subscribe(data => {
         console.log("dataaa",data)
