@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { Product } from '../shared/product.model'
 import { CartProduct } from '../shared/cart-product.model'
-// import { NgForm } from '@angular/forms';
 import { ApiService } from '../shared/api.service'
 
 
@@ -13,7 +12,6 @@ import { ApiService } from '../shared/api.service'
 export class ProductComponent implements OnInit {
 
   @Input() product: Product;
-
   @HostBinding('class') columnClass=" four wide column"
 
   loading: Boolean = false;
