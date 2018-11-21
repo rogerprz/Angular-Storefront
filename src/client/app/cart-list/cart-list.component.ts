@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartProduct } from '../shared/cart-product.model';
 import { ApiService } from '../shared/api.service';
-// import { CouponInputComponent } from ''
+
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
@@ -25,13 +25,11 @@ export class CartListComponent implements OnInit {
   getCartItems(){
     this.api.get(`users/${localStorage.id}`)
       .subscribe(data=> {
-        // console.log("GETCART",data.cart);
         this.cartTotal(data.cart);
         this.cartProducts = data.cart})
   };
 
   deleteCartItem(cartProduct){
-    console.log(cartProduct);
     this.api.put(`users/${localStorage.id}/cart`, cartProduct )
       .subscribe(data => {
         let cart = data.value.cart
@@ -43,7 +41,6 @@ export class CartListComponent implements OnInit {
 
     this.api.post(`/coupons/${coupon.couponCode}`, coupon)
     .subscribe(c => {
-      console.log("SUBSCRIBE_DATA",c);
       if (coupon === null){
         return alert("Coupon not available")
       } else{

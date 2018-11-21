@@ -10,7 +10,6 @@ import { ApiService } from '../shared/api.service'
 export class CouponComponent implements OnInit {
 
   @Input() coupon: Coupon;
-
   @HostBinding('class') columnClass=" four wide column"
 
 

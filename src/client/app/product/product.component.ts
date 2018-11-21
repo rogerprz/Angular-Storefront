@@ -27,7 +27,7 @@ export class ProductComponent implements OnInit {
 
     const addToCart: CartProduct = this.product
 
-    this.api.post(`users/${localStorage.id}`, addToCart ) //,requestOptions
+    this.api.post(`users/${localStorage.id}`, addToCart )
       .subscribe(data => {
         this.loading = false;
         this.addedToCart = data;
