@@ -20,8 +20,7 @@ export class ProductComponent implements OnInit {
   constructor(public api: ApiService) { }
 
   ngOnInit() {
-
-  }
+}
   addToCart(){
     this.loading = true;
 
