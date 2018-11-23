@@ -210,8 +210,8 @@ function apiRouter(database) {
     usersCollection
       .findOne({ username: user.username }, (err, result)=>{
         if (!result) {
-          alert("User not found. Try signing up or resetting pw!")
-          return res.status(404).json({ error: 'user not found'})
+          // alert("User not found. Try signing up or resetting pw!");
+          return res.status(204).json({ error: 'User not found'})
         }
         if (!bcrypt.compareSync(user.password, result.password)) {
           return res.status(401).json({ error: 'incorrect password'})
