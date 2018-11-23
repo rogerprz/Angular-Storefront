@@ -18,7 +18,6 @@ export class CouponInputComponent implements OnInit {
   }
   submitCoupon(form: NgForm){
     const value = form.value
-    console.log("verifymethod");
     console.log(value);
     this.coupon.emit(value)
     form.reset();

@@ -42,7 +42,7 @@ export class AddProductComponent implements OnInit {
     headers.append('Content-Type', 'application/json');
 
 
-    this.api.post('products', product ) //,requestOptions
+    this.api.post('products', product )
       .subscribe(data => {
         form.reset();
         this.loading = false;
