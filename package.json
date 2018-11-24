@@ -12,13 +12,14 @@
     "sample": "node src/server/data/seed-db.js",
     "test": "ng test",
     "lint": "ng lint",
-    "postinstall": "ng build --output-path dist" 
+    "postinstall": "ng build --output-path dist"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
+    "@angular/compiler-cli": "~7.0.0",
     "@angular/core": "~7.0.0",
     "@angular/forms": "~7.0.0",
     "@angular/http": "~7.0.0",
@@ -42,7 +43,6 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "~7.0.4",
-    "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
