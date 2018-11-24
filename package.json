@@ -11,7 +11,8 @@
     "watch": "run-p watch:*",
     "sample": "node src/server/data/seed-db.js",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "postinstall": "ng build --output-path dist" 
   },
   "private": true,
   "dependencies": {
