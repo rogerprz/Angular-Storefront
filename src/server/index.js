@@ -12,7 +12,7 @@ MongoClient.connect(process.env.MONGODB_URI, (err, db) => {
   console.log('connected to mongodb...');
 
   createExpressApp(db)
-  .listen(3000, () => {
+  .listen(process.env.PORT || 5000, () => {
     database = db;
     console.log('listening on port 3000...');
   });
