@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "ng build --prod",
-    "start": "run-s build start:server",
+    "build": "ng build",
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/server/index.js",
     "start:server": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/server/index.js",
     "watch:client": "ng serve --proxy-config proxy.conf.json --open",
     "watch:server": "nodemon src/server/index.js",
