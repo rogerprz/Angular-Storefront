@@ -12,7 +12,7 @@
     "sample": "node src/server/data/seed-db.js",
     "test": "ng test",
     "lint": "ng lint",
-    "postinstall": "ng build --output-path dist"
+    "postinstall": "ng build --output-path src/server/public"
   },
   "private": true,
   "dependencies": {
