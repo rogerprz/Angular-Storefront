@@ -30,7 +30,7 @@
               "src/client/assets/semantic.min.css",
               "src/client/assets/semantic.grid.min.css"
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
+            "scripts": []
           },
           "configurations": {
             "production": {
