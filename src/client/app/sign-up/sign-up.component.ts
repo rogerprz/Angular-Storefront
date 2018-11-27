@@ -41,7 +41,7 @@ export class SignUpComponent implements OnInit {
     if (formValues.vendorCode.length > 0 && formValues.vendorCode !== "fastspring"){
       return alert("Invalide Vendor Code..")
     }
-    else if(formValues.vendorCode === "fastspring"){
+    else if(formValues.vendorCode === "newVendor"){
       user.vendor = true;
       user.admin = true;
     }
