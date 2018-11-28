@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "AngularApiAuth:build"
+            "browserTarget": "Angular-Storefront:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "AngularApiAuth:build:production"
+              "browserTarget": "Angular-Storefront:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AngularApiAuth:build"
+            "browserTarget": "Angular-Storefront:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "AngularApiAuth-e2e": {
+    "Angular-Storefront-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "AngularApiAuth:serve"
+            "devServerTarget": "Angular-Storefront:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "AngularApiAuth:serve:production"
+              "devServerTarget": "Angular-Storefront:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "AngularApiAuth"
+  "defaultProject": "Angular-Storefront"
 }
