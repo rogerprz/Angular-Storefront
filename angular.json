@@ -107,7 +107,7 @@
       }
     },
     "Angular-Storefront-e2e": {
-      "root": "e2e/",
+      "root": "/",
       "projectType": "application",
       "prefix": "",
       "architect": {

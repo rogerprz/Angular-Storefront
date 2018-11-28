@@ -21,6 +21,7 @@ import { CouponComponent } from './coupon/coupon.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CouponInputComponent } from './coupon-input/coupon-input.component';
+import { ProductSearchComponent } from './product-search/product-search.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { CouponInputComponent } from './coupon-input/coupon-input.component';
     SignUpComponent,
     CheckoutComponent,
     CouponInputComponent,
+    ProductSearchComponent,
   ],
   exports: [CouponInputComponent],
   imports: [
