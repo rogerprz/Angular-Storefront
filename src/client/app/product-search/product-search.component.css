@@ -1,0 +1,14 @@
+app-product-search{
+  width: 100%;
+}
+.productSearchInput{
+  width: 100%;
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.productSearchSubCont{
+  width: 600px;
+  display: flex;
+}

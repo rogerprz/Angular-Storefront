@@ -1,1 +1,11 @@
-<input type="text" name="Product-Search" placeholder="Search Products..." >
+<form class="ui big form productSearchInput"
+    #couponForm="ngForm" (submit)="submitCoupon(couponForm)">
+  <div class="field wide four productSearchSubCont">
+    <input type="text" name="productSearch" placeholder="Search Products..." ngModel>
+      <button
+        type="submit"
+        class="ui primary button float right floated">
+        Apply Coupon
+      </button>
+  </div>
+</form>
