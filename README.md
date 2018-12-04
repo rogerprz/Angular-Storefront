@@ -1,5 +1,6 @@
 # Angular Storefront
 
+[Live Demo hosted on Heroku](https://angular-storefront.herokuapp.com/products)
 
 ## Getting Started
 
