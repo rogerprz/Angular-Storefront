@@ -1,5 +1,7 @@
 # Angular Storefront
 
+**Description: ** Simplified version of the amazon marketplace where users/vendors can signup or login. Users can add products to cart. Users can apply coupon to their total.
+
 [Live Demo hosted on Heroku](https://angular-storefront.herokuapp.com/products)
 
 ## Getting Started
