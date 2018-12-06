@@ -7,7 +7,7 @@ Vendors can login and create new products or coupons.
 
 ## Getting Started
 
-** Note: to create a vendor login, code: fastspring**
+**Note to create a vendor login, code: 'newVendor'**
 
 ## Dependencies | Installation Requirements
 * Run `npm install`
